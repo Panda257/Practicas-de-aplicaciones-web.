@@ -1,8 +1,8 @@
 # Inicio de Apps Webs
 ## Primera clase
 ### lista
-**Prueba texto negrita**
-*cursiva*
+**Prueba texto negrita** /
+*cursiva* /
 ~~tachado~~
 
 Desorden 
