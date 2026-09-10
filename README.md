@@ -1,2 +1,2 @@
-# Practicas-de-aplicaciones-web.
+# Practicas-de-aplicaciones-web.#
 Contenido de aplicaciones web
