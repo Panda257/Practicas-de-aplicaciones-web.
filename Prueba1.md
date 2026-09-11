@@ -15,7 +15,7 @@ Orden
 2. Elemento02
 3. Elemento 03
 
-[Buscar info] (https://www.wikipedia.org) 
+[Buscar info](https://www.wikipedia.org) 
 
 ![Github Logo](https://cdn-icons-png.flaticon.com/256/25/25231.png) 
 
