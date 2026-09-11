@@ -22,4 +22,4 @@ Orden
 ```html
 <h1>Hola mundo</h1>
 
->nota destacada
+> nota destacada
