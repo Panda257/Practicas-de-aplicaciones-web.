@@ -13,6 +13,7 @@
 
 ![VirtualBox Error](Error%20VirtualBox.png) 
 
+## Instalación con máquina encendida
 5. Luego de iniciar la máquina elegimos el idioma del sistema y del teclado.
 6. Elegimos el tipo de instalación "Ubuntu server" (El que pone "minimized" NO).
 7. La proxy la dejamos en blanco.
