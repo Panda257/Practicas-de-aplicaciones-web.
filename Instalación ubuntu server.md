@@ -1,7 +1,6 @@
 # Instalación ubuntu server
 
-## Creación máquina virtual.
-
+## Creación máquina virtual
 1. Abrir VirtualBox.
 2. Hacer clic en "nuevo".
 3. Ponerle nombre a tu máquina virtual y colocar la ISO (antes de continua, quita la instalación desatendida).
