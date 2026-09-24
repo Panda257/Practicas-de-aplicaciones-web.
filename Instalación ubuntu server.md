@@ -9,7 +9,7 @@
 ## Configuración de los adaptadores de red
 Con la máquina virtual apagada, entraremos a configuración y luego a red para configurar los adaptadores
 
-
+## Error máquina virtual:
 **Es posible que aparezca este error, en caso de que lo tengas hay que desinstalar el VBox y hay que volverlo a instalar o solamente actualizarlo.**
 
 ![VirtualBox Error](Error%20VirtualBox.png) 
