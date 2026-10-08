@@ -14,4 +14,4 @@ SSH (Secure Shell) es un protocolo de red que permite conectarse y administrar s
 
 
 ### ¡Detalle!
-si no tienes OpenSSH instalado puedes usar el comando: *sudo apt install openssh-server -y* acompañado de *sudo systemctl enable --now ssh*
+si no tienes OpenSSH instalado puedes usar el comando: **sudo apt install openssh-server -y** acompañado de **sudo systemctl enable --now ssh**
