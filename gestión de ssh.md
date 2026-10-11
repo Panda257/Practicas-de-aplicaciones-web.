@@ -26,4 +26,4 @@ si no tienes OpenSSH instalado puedes usar el comando: **sudo apt install openss
 8. verificamos con **ip a**
 9. Desde el ordenador anfitrión abrimos la terminal y escribimos: **ssh tu_usuario@192.168.56.10**
 
-### La primera vez que accedamos nos preguntará si confiamos en el host, escribimos **yes** y ya estaremos conectados al servidor de forma remota
+La primera vez que accedamos nos preguntará si confiamos en el host, escribimos **yes** y ya estaremos conectados al servidor de forma remota
