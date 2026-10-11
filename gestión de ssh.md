@@ -22,4 +22,8 @@ si no tienes OpenSSH instalado puedes usar el comando: **sudo apt install openss
 
 ![NetPlanCompleto](Net%20PlanCompleto.png) 
 
+7. Aplicaremos los cambios usando **sudo netplan apply** (en caso de haber hecho algo mal, este comando nos lo dirá ya que los cambios no se aplicarán y nos enseñará la línea con el error)
+8. verificamos con **ip a**
+9. Desde el ordenador anfitrión abrimos la terminal y escribimos: **ssh tu_usuario@192.168.56.10**
 
+###La primera vez que accedamos nos preguntará si confiamos en el host, escribimos **yes** y ya estaremos conectados al servidor de forma remota
