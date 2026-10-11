@@ -17,5 +17,8 @@ SSH (Secure Shell) es un protocolo de red que permite conectarse y administrar s
 
 6. Lo tendremos que dejar algo así (por ejemplo):
 
+![NetPlanCompleto](Net%20PlanCompleto.png) 
+
+
 ### ¡Detalle!
 si no tienes OpenSSH instalado puedes usar el comando: **sudo apt install openssh-server -y** acompañado de **sudo systemctl enable --now ssh**
