@@ -10,8 +10,9 @@ SSH (Secure Shell) es un protocolo de red que permite conectarse y administrar s
 
 1. Comprobaremos lo que tenemos con: ip a
 2. Localizaremos el fichero de configuración con: ls etc/netplan/
-3. Editaremos el fichero con: **sudo nano /etc/netplan/50-cloud-init.yaml** o con **00-cloud-init.yaml** ( depende de cuál se tenga, lo sabremos usando el comando ls /etc/neptplan/ )
-4. Nos encontraremos con algo como esto:
+3. Editaremos el fichero con: **sudo nano /etc/netplan/50-cloud-init.yaml** o con **00-cloud-init.yaml** ( depende de cuál se tenga, lo sabremos usando el comando ls /etc/neptplan/)
+5. Nos encontraremos con algo como esto:
+
 ![NetPlan](Net%20Plan.png) 
 
 ### ¡Detalle!
