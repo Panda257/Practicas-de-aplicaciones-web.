@@ -27,4 +27,7 @@ Apache2 es un **servidor web**: un programa que está siempre escuchando en un *
 2. Al habilitar un sitio (usando **a2ensite**), apache crea un enlace simbólico en **sites-enabled/**
 3. Al deshabilitarlo (usando **a2dissite**), el enlace se borra pero el fichero original sigue en **sites-available/**
 
-##
+## Virtualhost: qué es, cómo se configura, cómo se habilita y deshabilita
+### ¿Qué es virtualhost?
+Virtualhost es un bloque de configuración que le dice a apache: "cuando te llegue una petición con ciertas características, enseña esta carpeta" por eso un único servidor con la instalación de Apache puede alojar varias webs a la vez.
+### ¿Cómo se configura?
