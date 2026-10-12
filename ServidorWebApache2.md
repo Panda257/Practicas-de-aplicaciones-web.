@@ -30,4 +30,10 @@ Apache2 es un **servidor web**: un programa que está siempre escuchando en un *
 ## Virtualhost: qué es, cómo se configura, cómo se habilita y deshabilita
 ### ¿Qué es virtualhost?
 Virtualhost es un bloque de configuración que le dice a apache: "cuando te llegue una petición con ciertas características, enseña esta carpeta" por eso un único servidor con la instalación de Apache puede alojar varias webs a la vez.
-### ¿Cómo se configura?
+Apache decide que Virtualhost usar según los siguientes criterios:
+1. Por puerto : Cada web escucha un puerto distinto (:80 , :9999)
+2. Por IP : Cada web responde a una IP distinta de la máquina virtual
+3. Por nombre: Cada web responde a un nombre distinto
+### ¿Cómo se configura por puerto y IP?
+#### Configuración por puerto:
+1.
