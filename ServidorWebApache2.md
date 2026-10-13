@@ -36,4 +36,29 @@ Apache decide que Virtualhost usar según los siguientes criterios:
 3. Por nombre: Cada web responde a un nombre distinto
 ### ¿Cómo se configura por puerto y IP?
 #### Configuración por puerto:
-1.
+1. Crear carpetas y páginas:
+
+sudo mkdir -p /var/www/smr/web /var/www/smr/intranet
+echo "<h1>Bienvenidos a SMR</h1>" | sudo tee /var/www/smr/web/index.html
+echo "<h1>Intranet de SMR</h1>" | sudo tee /var/www/smr/intranet/intranet.html
+
+2. Decirle a Apache los puertos que va a escuchar:
+
+Iremos a: **sudo nano /etc/apache2/ports.conf** y debajo de **Listen 80** pondremos otro puerto, en este caso pondremos el puerto 9999 quedando así:
+Listen 80
+Listen 9999
+
+3.  Creación del fichero Virtualhost:
+
+**sudo nano /etc/apache2/sites-available/smr.conf** (el fichero se crea vacío)
+Se coloca el siguiente contenido:
+
+<VirtualHost *:80>
+    DocumentRoot /var/www/smr/web
+</VirtualHost>
+
+<VirtualHost *:9999>
+    DocumentRoot /var/www/smr/intranet
+    DirectoryIndex intranet.html
+</VirtualHost>
+
