@@ -41,8 +41,8 @@ Apache decide que Virtualhost usar según los siguientes criterios:
 1. Crear carpetas y páginas:
 
 **sudo mkdir -p /var/www/smr/web /var/www/smr/intranet**
-**echo "<h1>Bienvenidos a SMR</h1>" | sudo tee /var/www/smr/web/index.html**
-**echo "<h1>Intranet de SMR</h1>" | sudo tee /var/www/smr/intranet/intranet.html**
+**echo "<h1>Bienvenidos a SMR</h1>"** | sudo tee /var/www/smr/web/index.html
+**echo "<h1>Intranet de SMR</h1>"** | sudo tee /var/www/smr/intranet/intranet.html**
 
 2. Decirle a Apache los puertos que va a escuchar:
 
