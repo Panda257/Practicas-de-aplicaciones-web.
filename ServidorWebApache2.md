@@ -63,12 +63,16 @@ Se coloca el siguiente contenido:
 ![Fichero Virtualhost](Fichero%20Virtualhost.png)
 
 <VirtualHost *:80>
+
     DocumentRoot /var/www/smr/web
 </VirtualHost>
 
+
 <VirtualHost *:9999>
+
     DocumentRoot /var/www/smr/intranet
     DirectoryIndex intranet.html
 </VirtualHost>
+
 
 ---------------------------------------------------------------
