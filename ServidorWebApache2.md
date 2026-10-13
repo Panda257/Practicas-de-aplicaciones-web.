@@ -53,5 +53,5 @@ Listen 9999
 **sudo nano /etc/apache2/sites-available/smr.conf** (el fichero se crea vacío)
 Se coloca el siguiente contenido:
 
-
+![FicheroVirtualhost] (Fichero20%Virtualhost) 
 
