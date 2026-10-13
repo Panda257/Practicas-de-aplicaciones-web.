@@ -1,6 +1,3 @@
-# Practicas-de-aplicaciones-web.
-Contenido de aplicaciones web
-
 # Aplicaciones Web: Documentación
 
 ## Índice
