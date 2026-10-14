@@ -131,4 +131,14 @@ Editaremos de nuevo **smr.conf** y añadiremos el bloque <Directory> dentro del 
 
 ![Directorio protegido](Directorio%20protegido.png)
 
+3. Aplicamos cambios
 
+sudo apachectl configtest
+
+sudo systemctl restart apache2
+
+### Comprobación
+
+http://www.smr.com : Nos saldrá "bienvenido a SMR" sin contraseña
+
+http://www.smr.com:9999  :  	Ventana de usuario y contraseña, al acertar: Intranet de SMR
