@@ -38,7 +38,7 @@ Apache decide que Virtualhost usar según los siguientes criterios:
 3. Por nombre: Cada web responde a un nombre distinto
 ### ¿Cómo se configura por puerto y IP?
 
-# Configuración por puerto:
+# Configuración por PUERTO:
 1. Crear carpetas y páginas:
 
 -------------------------------------------------------------------------------------------------
@@ -95,6 +95,26 @@ sudo a2dissite smr.conf
 sudo systemctl reload apache2
 -----------------------------------------------------------------------------
 ### Comprobación por IP y puerto (en el navegador anfitrión):
+
+http://192.168.56.10 :Bienvenidos a SMR
+
+http://192.168.56.10:9999  : Intranet de SMR
+
+-----------------------------------------------------------------------------
+
+# Variante: Virtualhost por NOMBRE
+
+Configuraremos el fichero **smr.conf** y añadiremos **ServerName** a cada bloque. Aquí el nombre es el mismo en los dos y lo que cambia es el puerto:
+
+1. entramos al fichero:
+
+sudo nano /etc/apache2/sites-available/smr.conf
+
+
+
+
+
+-----------------------------------------------------------------------------
 
 # Variante: Virtualhost por IP
 Aquí el criterio es la IP a la que llega la petición  y para probarlo hace falta que la VM tenga dos IP (se puede añadir una segunda a la interfaz host-only en netplan):
