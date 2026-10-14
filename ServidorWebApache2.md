@@ -129,5 +129,6 @@ sudo htpasswd -c /etc/apache2/.htpasswd alumno  : Las contraseñas se guardan ci
 2. Añadir la protección al Virtualhost:
 Editaremos de nuevo **smr.conf** y añadiremos el bloque <Directory> dentro del virtualhost del puerto 9999, el fichero completo queda así:
 
+![Directorio protegido](Directorio%20protegido.png)
 
 
