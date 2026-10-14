@@ -38,7 +38,7 @@ Apache decide que Virtualhost usar según los siguientes criterios:
 3. Por nombre: Cada web responde a un nombre distinto
 ### ¿Cómo se configura por puerto y IP?
 
-#### Configuración por puerto:
+# Configuración por puerto:
 1. Crear carpetas y páginas:
 
 -------------------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ sudo a2dissite smr.conf
 
 sudo systemctl reload apache2
 -----------------------------------------------------------------------------
-# Comprobación por IP y puerto (en el navegador anfitrión):
+### Comprobación por IP y puerto (en el navegador anfitrión):
 
-## Variante: Virtualhost por IP
+# Variante: Virtualhost por IP
 Aquí el criterio es la IP a la que llega la petición  y para probarlo hace falta que la VM tenga dos IP (se puede añadir una segunda a la interfaz host-only en netplan)
