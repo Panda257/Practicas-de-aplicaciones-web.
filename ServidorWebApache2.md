@@ -116,3 +116,4 @@ network:
 3. Aplicamos los cambios con sudo netplan apply
 
 Luego iremos al fichero del virtualhost (sudo nano /etc/apache2/sites-available/smr.conf)
+![IP Virtualhost](IP%20Virtualhost.png)
