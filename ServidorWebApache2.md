@@ -101,21 +101,14 @@ Aquí el criterio es la IP a la que llega la petición  y para probarlo hace fal
 
 1. Usaremos sudo nano /etc/netplan/50-cloud-init.yaml (o 00-cloud-init.yaml)
 2. Añadiremos la IP extra quedando algo así:
-network:
 
+network:
   version: 2
-  
   ethernets:
-  
     enp0s3:
-    
       dhcp4: true
-      
     enp0s8:
-    
       dhcp4: false
-      
       addresses:
-      
         - 192.168.56.10/24
         - 192.168.56.11/24
