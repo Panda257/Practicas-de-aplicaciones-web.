@@ -88,10 +88,12 @@ Se coloca el siguiente contenido (extender en modo edición para verse mejor):
 **sudo systemctl restart apache2** : aplica los cambios
 
 ### Para DESHABILITAR un sitio:
-sudo a2dissite smr.conf
-sudo systemctl reload apache2
 
-### Comprobación por IP y puerto (en el navegador anfitrión):
+sudo a2dissite smr.conf
+
+sudo systemctl reload apache2
+-----------------------------------------------------------------------------
+# Comprobación por IP y puerto (en el navegador anfitrión):
 
 ## Variante: Virtualhost por IP
 Aquí el criterio es la IP a la que llega la petición  y para probarlo hace falta que la VM tenga dos IP (se puede añadir una segunda a la interfaz host-only en netplan)
