@@ -117,3 +117,17 @@ network:
 
 Luego iremos al fichero del virtualhost (sudo nano /etc/apache2/sites-available/smr.conf)
 ![IP Virtualhost](IP%20Virtualhost.png)
+
+# Directorio protegido con contraseña:
+
+1. Creación del usuario:
+
+sudo apt install apache2-utils -y
+
+sudo htpasswd -c /etc/apache2/.htpasswd alumno  : Las contraseñas se guardan cifradas en /etc/apache2/.htpasswd
+
+2. Añadir la protección al Virtualhost:
+Editaremos de nuevo **smr.conf** y añadiremos el bloque <Directory> dentro del virtualhost del puerto 9999, el fichero completo queda así:
+
+
+
