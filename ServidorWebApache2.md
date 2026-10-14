@@ -52,6 +52,7 @@ echo "<h1>Intranet de SMR</h1>" | sudo tee /var/www/smr/intranet/intranet.html**
 2. Decirle a Apache los puertos que va a escuchar:
 
 Iremos a: **sudo nano /etc/apache2/ports.conf** y debajo de **Listen 80** pondremos otro puerto, en este caso pondremos el puerto 9999 quedando así:
+
 Listen 80
 Listen 9999
 
