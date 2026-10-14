@@ -80,8 +80,11 @@ Se coloca el siguiente contenido (extender en modo edición para verse mejor):
 4. Habilitar sitio y reiniciar apache
 
 **sudo a2ensite smr.conf** : habilita nuestro sitio web
+
 **sudo a2dissite 000-default.conf** : deshabilita el sitio de ejemplo de Apache
+
 **sudo apachectl configtest** : comprueba la sintaxis. Debe responder **Syntax OK**
+
 **sudo systemctl restart apache2** : aplica los cambios
 
 ### Para DESHABILITAR un sitio:
