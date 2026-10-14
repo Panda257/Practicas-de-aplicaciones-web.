@@ -22,11 +22,12 @@ Apache2 es un **servidor web**: un programa que está siempre escuchando en un *
 4. /etc/apache2/sites-enabled/ : Sitios **activos** con enlaces de **sites-available/**
 5. /var/www/html/  : Carpeta de la web por defecto
 6. /var/log/apache2/ : Registros: **access.log** (accesos) y **error.log** (errores)
+
 ### Relación entre sites available y enabled
 1. Los sitios se escriben en sites-available/
 2. Al habilitar un sitio (usando **a2ensite**), apache crea un enlace simbólico en **sites-enabled/**
 3. Al deshabilitarlo (usando **a2dissite**), el enlace se borra pero el fichero original sigue en **sites-available/**
-
+------------------------------------------------------------------------------------------------------------------------------
 ## Virtualhost: qué es, cómo se configura, cómo se habilita y deshabilita
 
 ### ¿Qué es virtualhost?
@@ -57,7 +58,7 @@ Listen 9999
 3.  Creación del fichero Virtualhost:
 
 **sudo nano /etc/apache2/sites-available/smr.conf** (el fichero se crea vacío)
-Se coloca el siguiente contenido:
+Se coloca el siguiente contenido (extender en modo edición para verse mejor):
 ---------------------------------------------------------------
 
 ![Fichero Virtualhost](Fichero%20Virtualhost.png)
@@ -74,5 +75,20 @@ Se coloca el siguiente contenido:
     DirectoryIndex intranet.html
 </VirtualHost>
 
-
 ---------------------------------------------------------------
+
+4. Habilitar sitio y reiniciar apache
+
+**sudo a2ensite smr.conf** : habilita nuestro sitio web
+**sudo a2dissite 000-default.conf** : deshabilita el sitio de ejemplo de Apache
+**sudo apachectl configtest** : comprueba la sintaxis. Debe responder **Syntax OK**
+**sudo systemctl restart apache2** : aplica los cambios
+
+### Para DESHABILITAR un sitio:
+sudo a2dissite smr.conf
+sudo systemctl reload apache2
+
+### Comprobación por IP y puerto (en el navegador anfitrión):
+
+## Variante: Virtualhost por IP
+Aquí el criterio es la IP a la que llega la petición  y para probarlo hace falta que la VM tenga dos IP (se puede añadir una segunda a la interfaz host-only en netplan)
