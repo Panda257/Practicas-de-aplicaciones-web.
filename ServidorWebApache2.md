@@ -60,7 +60,6 @@ Listen 9999
 
 **sudo nano /etc/apache2/sites-available/smr.conf** (el fichero se crea vacío)
 Se coloca el siguiente contenido (extender en modo edición para verse mejor):
----------------------------------------------------------------
 
 ![Fichero Virtualhost](Fichero%20Virtualhost.png)
 
@@ -106,12 +105,45 @@ http://192.168.56.10:9999  : Intranet de SMR
 
 Configuraremos el fichero **smr.conf** y añadiremos **ServerName** a cada bloque. Aquí el nombre es el mismo en los dos y lo que cambia es el puerto:
 
-1. entramos al fichero:
+1. Entramos al fichero:
 
 sudo nano /etc/apache2/sites-available/smr.conf
 
+2. Dejamos el fichero así:
 
+![Fichero Servername](Fichero%20Servername.png)
 
+ServerName: nombre de la web
+
+3. reiniciamos:
+
+sudo apachectl configtest
+
+sudo systemctl restart apache2
+
+El nombre www.smr.com no existe en ningún DNS real, así que el navegador no sabría a qué IP ir. El fichero hosts del sistema operativo sirve como un DNS local: relaciona un nombre con una IP solo en la máquina donde se edita.
+
+En el equipo anfitrión no se tienen permisos para editarlo, así que se hace en una segunda VM donde sí se es administrador. Debe estar en la misma red host-only que la primera, con una IP distinta del mismo rango
+
+### En otra VM(preferiblemente ubuntu):
+
+1. fichero host:
+
+sudo nano /etc/hosts
+
+2. Añadir una línea con la IP de la primera VM y el nombre:
+
+192.168.56.10    www.smr.com
+
+3. comprobar que hay conexión:
+
+ping -c 3 www.smr.com
+
+**Escribir en el navegador**
+
+http://www.smr.com  = Bienvenidos a SMR
+
+http://www.smr.com:9999 = Intranet de SMR
 
 
 -----------------------------------------------------------------------------
@@ -138,7 +170,7 @@ network:
 Luego iremos al fichero del virtualhost (sudo nano /etc/apache2/sites-available/smr.conf)
 ![IP Virtualhost](IP%20Virtualhost.png)
 
-# Directorio protegido con contraseña:
+# Directorio protegido con contraseña(Auth-Basic):
 
 1. Creación del usuario:
 
