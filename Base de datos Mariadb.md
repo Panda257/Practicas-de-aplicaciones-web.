@@ -74,3 +74,7 @@ Navegador  -->  Apache  -->  PHP  -->  MariaDB
 sudo apt update
 systemctl is-active apache2
 ```
+En la consola se mostrará:
+'''
+active
+'''
