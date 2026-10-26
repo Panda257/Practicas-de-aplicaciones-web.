@@ -216,3 +216,79 @@ Explicación: WordPress está programado en PHP así que hace falta el intérpre
 | `php-zip` | Instalar y actualizar plugins y temas (vienen en .zip). |
 | `php-intl` | Idiomas y formatos regionales (fechas, números). |
 
+#### 6.2. Comprobar que Apache ha cargado PHP
+```
+sudo systemctl restart apache2
+apache2ctl -M | grep -E 'prefork|php'
+```
+
+Saldrá algo como esto en la terminal:
+```
+ mpm_prefork_module (shared)
+ php_module (shared)
+```
+
+Explicación: reinicio Apache para que cargue el módulo de PHP recién instalado,  después listo los módulos activos de Apache y filtro con `grep`. Aparecen `php_module` (Apache ya sabe ejecutar PHP) y `mpm_prefork_module` (el modo de funcionamiento que necesita el módulo de PHP)
+
+#### 6.3. Comprobar que PHP puede hablar con MariaDB
+```
+php -m | grep -i mysql
+```
+
+Se verá esto en la terminal:
+```
+mysqli
+mysqlnd
+pdo_mysql
+```
+Explicación: `php -m` lista los módulos de PHP y `grep -i mysql` muestra solo los relacionados con MySQL/MariaDB (`-i` ignora mayúsculas), aparecen `mysqli`, `mysqlnd` y `pdo_mysql` que son las piezas que usa WordPress para conectarse a la base de datos.
+
+#### 6.4. Comprobar que Apache ejecuta PHP
+```
+echo '<?php phpinfo();' | sudo tee /var/www/html/info.php
+```
+
+Abrimos en el navegador: `http://IP_DE_TU_SERVIDOR/info.php`
+
+Explicación: creo un fichero `info.php` con la función `phpinfo()` que genera una página con toda la información de PHP. `tee` con `sudo` permite escribir en `/var/www/html` que pertenece a root. Al abrirlo aparece la página morada con la versión de PHP lo que demuestra que Apache ejecuta PHP correctamente (si no, se vería el código o se descargaría el fichero)
+
+![php -v](img/07-php-version.png)
+![Módulos de PHP](img/08-php-modulos.png)
+![Página info.php](img/09-info-php.png)
+
+#### 6.5. Borrar el fichero de prueba (obligatorio)
+
+```
+sudo rm /var/www/html/info.php
+ls /var/www/html
+```
+ 
+Se verá esto en la terminal:
+ 
+```
+index.html
+```
+
+Explicación: borro `info.php` y compruebo con `ls` que ya no está en la carpeta de la web.
+
+**¿Y por qué es peligroso dejar `info.php` en un servidor real?**
+Porque cualquiera que visite esa dirección puede ver información interna del servidor: versión exacta de PHP y del sistema, módulos instalados, rutas de carpetas y configuración. Un atacante puede usar esos datos para buscar vulnerabilidades conocidas de esas versiones concretas y preparar un ataque.
+
+### Apartado 7. Comprobación final
+
+```
+systemctl is-active apache2 mariadb
+php -v
+```
+ 
+Se verá esto en la terminal
+ 
+```
+active
+active
+PHP 8.3.6 (cli) (built: ...) (NTS)
+```
+
+Explicación: `is-active` comprueba los dos servicios a la vez y ambos responden `active`. `php -v` confirma que PHP 8.3 está instalado
+
+
