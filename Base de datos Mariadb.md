@@ -19,4 +19,10 @@ Una base de datos en un conjunto de información guardada de forma ordenada para
 
 ### ¿Qué es un SGBD?
 
-Un 
+Un **SGBD** (Sistema Gestor de Bases de Datos) es el **programa que se encarga de manejar la base de datos**, los programas como WordPress no leen ni escriben los datos directamente en el disco sino que se lo piden al SGBD y este se encarga de:
+
+- **Guardar** los datos de forma ordenada y segura.
+- **Buscarlos rápido** cuando alguien los pide usando el lenguaje **SQL**.
+- **Controlar quién accede** con usuarios, contraseñas y permisos.
+- **Evitar errores** cuando muchas personas usan los datos a la vez (por ejemplo dos visitantes comentando al mismo tiempo).
+- **Mantener la información coherente** aunque falle algo a mitad de una operación.
