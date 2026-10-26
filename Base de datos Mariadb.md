@@ -75,6 +75,35 @@ sudo apt update
 systemctl is-active apache2
 ```
 En la consola se mostrará:
-'''
+```
 active
-'''
+```
+
+### Apartado 2. Instalación de MariaDB
+
+```
+sudo apt install mariadb-server -y
+mariadb --version
+```
+En la consola se verá algo así:
+```
+mariadb  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64)
+```
+
+Explicación: `apt install mariadb-server` instala el servidor de bases de datos. La opción `-y` responde "sí" automáticamente a la confirmación. Con `mariadb --version` compruebo que se ha instalado la versión **10.11**, que es una versión LTS (soporte largo) compatible con WordPress.
+
+### Apartado 3. Comprobación del funcionamiento
+#### 3.1. Estado del servicio
+```
+sudo systemctl status mariadb
+systemctl is-enabled mariadb
+```
+En la consola se verá algo como esto:
+
+```
+● mariadb.service - MariaDB 10.11.14 database server
+     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
+     Active: active (running)
+```
+ 
+Explicación: `systemctl status` muestra el estado detallado del servicio. Aparece `active (running)`, es decir, está funcionando ahora mismo. `is-enabled` responde `enabled`, así que arrancará solo cada vez que se encienda el equipo, Ubuntu lo configura así automáticamente al instalar. 
