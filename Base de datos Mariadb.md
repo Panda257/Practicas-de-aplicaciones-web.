@@ -58,5 +58,19 @@ WordPress guarda en la base de datos todo lo que no son ficheros: **entradas, p�
 ```
 Navegador  -->  Apache  -->  PHP  -->  MariaDB
 (visitante)    (sirve la web) (ejecuta WordPress) (guarda los datos)
+```
 
+| Letra | Pieza | Estado antes de esta práctica |
+|-------|-------|-------------------------------|
+| **L** | Linux (Ubuntu 24.04) | Instalado (práctica anterior) |
+| **A** | Apache | Instalado (práctica anterior) |
+| **M** | MariaDB | Instalado (en esta práctica) |
+| **P** | PHP | Instalado (en esta práctica) |
+
+## 2. Instalación de MariaDB (práctica MariaDB)
+### Apartado 1. Preparación del sistema
+
+```
+sudo apt update
+systemctl is-active apache2
 ```
