@@ -144,3 +144,75 @@ Son cosas independientes: un servicio puede estar funcionando ahora pero no arra
 Al reiniciar Apache sí arrancaría, pero MariaDB **no**. La web cargaría pero WordPress no podría leer sus datos y mostraría el error **"Error al establecer una conexión con la base de datos"** hasta que alguien arrancara MariaDB 
 
 ### Apartado 4. Comandos principales
+
+| Comando | Función | Explicación propia |
+|---------|---------|--------------------|
+| `sudo systemctl start mariadb` | Arranca el servicio | Pone en marcha MariaDB si estaba parado. |
+| `sudo systemctl stop mariadb` | Detiene el servicio | Para MariaDB; las webs que lo usan dejan de poder leer datos. |
+| `sudo systemctl restart mariadb` | Reinicia el servicio | Lo para y lo vuelve a arrancar. Se usa tras cambiar la configuración. |
+| `sudo systemctl status mariadb` | Muestra su estado | Indica si está funcionando, desde cuándo y los últimos mensajes del registro. |
+| `sudo systemctl enable mariadb` | Arranque automático | Hace que MariaDB se inicie solo cada vez que se enciende el equipo. |
+
+### Apartado 5. ¿Qué pasa si MariaDB está parado?
+Detengo el servicio a propósito para ver cómo se manifiesta el fallo:
+
+```
+sudo systemctl stop mariadb
+systemctl is-active mariadb
+sudo mariadb
+```
+
+Se verá esto en la terminal:
+```
+inactive
+ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2)
+```
+
+Explicación: el estado pasa a `inactive` y al intentar entrar aparece el **ERROR 2002**, significa que el cliente no puede conectar con el servidor porque no está en marcha: el "socket" es el punto de conexión local que crea MariaDB al arrancar, y si el servicio está parado ese fichero no existe.
+
+Recupero el servicio:
+
+```
+sudo systemctl start mariadb
+systemctl is-active mariadb
+```
+
+Se verá esto en la terminal:
+```
+active
+```
+
+![Error con MariaDB parado](img/05-mariadb-error.png)
+![Recuperación del servicio](img/06-mariadb-recuperado.png)
+
+### Apartado 6. Instalación de PHP
+#### 6.1. Instalación de PHP y extensiones
+
+```
+sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-zip php-intl -y
+php -v
+```
+
+En la terminal se verá algo como esto:
+
+```
+PHP 8.3.6 (cli) (built: ...) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.3.6, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
+```
+
+Explicación: WordPress está programado en PHP así que hace falta el intérprete de PHP y varias extensiones
+
+| Paquete | Para qué sirve |
+|---------|----------------|
+| `php`   | El lenguaje PHP. |
+| `libapache2-mod-php` | Permite que Apache ejecute los ficheros `.php`. |
+| `php-mysql` | Permite a PHP conectarse a MariaDB (imprescindible). |
+| `php-curl` | Conexiones con otros servidores (actualizaciones, plugins). |
+| `php-gd` | Tratamiento de imágenes (miniaturas, recortes). |
+| `php-mbstring` | Manejo de textos con tildes, ñ y caracteres especiales. |
+| `php-xml` | Lectura y escritura de ficheros XML. |
+| `php-zip` | Instalar y actualizar plugins y temas (vienen en .zip). |
+| `php-intl` | Idiomas y formatos regionales (fechas, números). |
+
