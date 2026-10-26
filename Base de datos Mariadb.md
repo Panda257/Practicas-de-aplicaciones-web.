@@ -58,4 +58,5 @@ WordPress guarda en la base de datos todo lo que no son ficheros: **entradas, pÃ
 ```
 Navegador  -->  Apache  -->  PHP  -->  MariaDB
 (visitante)    (sirve la web) (ejecuta WordPress) (guarda los datos)
+
 ```
