@@ -26,3 +26,36 @@ Un **SGBD** (Sistema Gestor de Bases de Datos) es el **programa que se encarga d
 - **Controlar quién accede** con usuarios, contraseñas y permisos.
 - **Evitar errores** cuando muchas personas usan los datos a la vez (por ejemplo dos visitantes comentando al mismo tiempo).
 - **Mantener la información coherente** aunque falle algo a mitad de una operación.
+
+### ¿Por qué usar un SGBD y no guardar los datos en ficheros?
+
+| Guardar datos en ficheros sueltos | Usar un SGBD |
+|-----------------------------------|---|
+| Buscar algo obliga a leer todo el fichero | Busca muy rápido aunque haya miles de datos |
+| Si dos usuarios escriben a la vez, se pueden corromper los datos | Gestiona el acceso simultáneo sin errores |
+| Seguridad limitada a los permisos del fichero | Usuarios y permisos propios para cada base de datos |
+| Cada programa organiza los datos a su manera | Lenguaje estándar (SQL) que entienden muchos programas |
+
+Por eso cualquier web dinámica (tiendas online, foros, wordpress...) necesita un SGBD.
+
+### ¿Qué es MariaDB?
+
+**MariaDB** es un **SGBD relacional, libre y gratuito**, naciendo en 2009 como una copia mejorada de **MySQL** creada por el propio creador de MySQL cuando esta pasó a manos de Oracle. Por eso es **compatible con MySQL**: usa los mismos comandos y los programas que funcionan con MySQL funcionan también con MariaDB
+
+Se usa porque:
+ 
+- Es **software libre** y gratuito.
+- Viene en los **repositorios oficiales de Ubuntu** así que se instala con un solo comando.
+- Es totalmente **compatible con WordPress**.
+- Es rápido, estable y muy utilizado en servidores reales.
+
+### ¿Para qué la necesita WordPress?
+ 
+WordPress guarda en la base de datos todo lo que no son ficheros: **entradas, páginas, comentarios, usuarios y la configuración del sitio**. Cada vez que alguien visita la web, WordPress le pide a MariaDB los datos para montar la página
+
+### Cómo encaja todo (LAMP)
+ 
+```
+Navegador  -->  Apache  -->  PHP  -->  MariaDB
+(visitante)    (sirve la web) (ejecuta WordPress) (guarda los datos)
+```
