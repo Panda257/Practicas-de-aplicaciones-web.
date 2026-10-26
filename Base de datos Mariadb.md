@@ -79,6 +79,9 @@ En la consola se mostrará:
 active
 ```
 
+![Apache activo](img/01-apache-activo.png)
+
+
 ### Apartado 2. Instalación de MariaDB
 
 ```
@@ -107,3 +110,37 @@ En la consola se verá algo como esto:
 ```
  
 Explicación: `systemctl status` muestra el estado detallado del servicio. Aparece `active (running)`, es decir que está funcionando ahora mismo. `is-enabled` responde `enabled` así que arrancará solo cada vez que se encienda el equipo, Ubuntu lo configura así automáticamente al instalar. 
+
+#### 3.2. Entrar en la base de datos
+```
+sudo mariadb
+```
+
+```
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Server version: 10.11.14-MariaDB-0ubuntu0.24.04.1 Ubuntu 24.04
+ 
+MariaDD[(none)]
+```
+Para salir de MariaDB:
+```
+exit
+```
+
+![Estado del servicio](img/03-mariadb-status.png)
+![Entrada en MariaDB](img/04-mariadb-entrada.png)
+
+
+Explicación: `sudo mariadb` abre el cliente de MariaDB como administrador, el prompt cambia a `MariaDB [(none)]>`, lo que indica que estoy dentro del gestor y que este responde correctamente. `(none)` significa que todavía no he seleccionado ninguna base de datos. 
+
+**¿Qué diferencia hay entre `active (running)` y `enabled`?**
+- **`active (running)`**: el servicio está funcionando **en este momento**.
+- **`enabled`**: el servicio está configurado para **arrancar automáticamente** al encender el equipo.
+
+Son cosas independientes: un servicio puede estar funcionando ahora pero no arrancar solo, o al revés.
+
+**¿Qué pasaría con WordPress si MariaDB estuviera `active` pero no `enabled` y se reiniciara el servidor?**
+
+Al reiniciar Apache sí arrancaría, pero MariaDB **no**. La web cargaría pero WordPress no podría leer sus datos y mostraría el error **"Error al establecer una conexión con la base de datos"** hasta que alguien arrancara MariaDB 
+
+### Apartado 4. Comandos principales
