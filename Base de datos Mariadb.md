@@ -1,5 +1,5 @@
 # Base de datos Mariadb
-Índice:
+## Índice
 1. ¿Por qué un SGBD como MariaDB? ¿Qué es?
 2. Instalación de MariaDB
 
@@ -16,3 +16,7 @@ Una base de datos en un conjunto de información guardada de forma ordenada para
 |---|---------|-------|-------|
 | 1 | Hola mundo | admin | 2026-10-26 |
 | 2 | Horario de matrícula | admin | 2026-10-27 |
+
+### ¿Qué es un SGBD?
+
+Un 
