@@ -106,4 +106,4 @@ En la consola se verá algo como esto:
      Active: active (running)
 ```
  
-Explicación: `systemctl status` muestra el estado detallado del servicio. Aparece `active (running)`, es decir, está funcionando ahora mismo. `is-enabled` responde `enabled`, así que arrancará solo cada vez que se encienda el equipo, Ubuntu lo configura así automáticamente al instalar. 
+Explicación: `systemctl status` muestra el estado detallado del servicio. Aparece `active (running)`, es decir que está funcionando ahora mismo. `is-enabled` responde `enabled` así que arrancará solo cada vez que se encienda el equipo, Ubuntu lo configura así automáticamente al instalar. 
