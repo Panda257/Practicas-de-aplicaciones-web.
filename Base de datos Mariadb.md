@@ -13,6 +13,6 @@ Una base de datos en un conjunto de información guardada de forma ordenada para
 - Filas: cada elemento guardado (por ejemplo, cada entrada del blog)
 
 | id | título | autor | fecha |
-|---|---|---|---|
+|---|---------|-------|-------|
 | 1 | Hola mundo | admin | 2026-10-26 |
 | 2 | Horario de matrícula | admin | 2026-10-27 |
