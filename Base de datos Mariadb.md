@@ -79,7 +79,7 @@ En la consola se mostrará:
 active
 ```
 
-![Apache activo](img/01-apache-activo.png)
+![Apache activo](Apache%20activo.png)
 
 
 ### Apartado 2. Instalación de MariaDB
