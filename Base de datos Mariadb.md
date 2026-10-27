@@ -293,4 +293,4 @@ PHP 8.3.6 (cli) (built: ...) (NTS)
 
 Explicación: `is-active` comprueba los dos servicios a la vez y ambos responden `active`. `php -v` confirma que PHP 8.3 está instalado
 
-.
+
