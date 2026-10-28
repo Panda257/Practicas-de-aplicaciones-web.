@@ -122,3 +122,5 @@ license.txt      wp-admin            wp-config-sample.php  wp-cron.php  wp-load.
 readme.html      wp-blog-header.php  wp-includes           wp-login.php wp-signup.php
 ```
 ![Ficheros de WordPress](wordpress%20ficheros.png)
+
+**Explicación:** trabajo en `/tmp`, una carpeta temporal. `wget` descarga la última versión de WordPress desde la web oficial y `tar -xzf` la descomprime (`x` extraer, `z` formato gzip, `f` fichero), después creo la carpeta definitiva con `mkdir -p` y copio el contenido con `cp -a` que conserva fechas y permisos. El `.` final de `/tmp/wordpress/.` hace que se copie el **contenido** de la carpeta incluidos los ficheros ocultos y no la carpeta en sí.
