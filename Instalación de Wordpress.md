@@ -124,3 +124,31 @@ readme.html      wp-blog-header.php  wp-includes           wp-login.php wp-signu
 ![Ficheros de WordPress](wordpress%20ficheros.png)
 
 **Explicación:** trabajo en `/tmp`, una carpeta temporal. `wget` descarga la última versión de WordPress desde la web oficial y `tar -xzf` la descomprime (`x` extraer, `z` formato gzip, `f` fichero), después creo la carpeta definitiva con `mkdir -p` y copio el contenido con `cp -a` que conserva fechas y permisos. El `.` final de `/tmp/wordpress/.` hace que se copie el **contenido** de la carpeta incluidos los ficheros ocultos y no la carpeta en sí.
+
+| Carpeta | Para qué sirve |
+|---------|----------------|
+| `wp-admin` | El panel de administración. |
+| `wp-includes` | El núcleo de WordPress. No se toca. |
+| `wp-content` | Temas, plugins e imágenes subidas. Es lo único que se personaliza. |
+
+### Apartado 4. Propietario y permisos
+
+```
+sudo chown -R www-data:www-data /var/www/wordpress
+sudo find /var/www/wordpress -type d -exec chmod 755 {} \;
+sudo find /var/www/wordpress -type f -exec chmod 644 {} \;
+ls -l /var/www/wordpress
+```
+
+Se verá algo así en la consola:
+
+```
+-rw-r--r--  1 www-data www-data   405 ... index.php
+-rw-r--r--  1 www-data www-data 19903 ... license.txt
+drwxr-xr-x  9 www-data www-data  4096 ... wp-admin
+drwxr-xr-x  4 www-data www-data  4096 ... wp-content
+drwxr-xr-x 30 www-data www-data 12288 ... wp-includes
+...
+```
+
+![Permisos](permisos%20wordpress.png)
