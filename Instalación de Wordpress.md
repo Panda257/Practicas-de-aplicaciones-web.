@@ -34,6 +34,62 @@ Navegador  -->  Apache  -->  PHP (WordPress)  -->  MariaDB
 
 ## 2. Instalación paso a paso de WordPress y prueba de uso (práctica WordPress)
 ### Apartado 1. Comprobar el punto de partida
+Escribo lo siguiente en la consola:
+```bash
+systemctl is-active apache2 mariadb
+php -v
+ls /etc/apache2/sites-enabled/
+grep Listen /etc/apache2/ports.conf
+```
+Me devolverá esto:
+```
+active
+active
+PHP 8.5.4 (cli) (built: Oct 19 2026 14:35:18) (NTS)
+...
+000-default.conf  sitio-9999.conf
+Listen 80
+```
 
 ![Punto de partida](punto%20partida.png)
 
+### Apartado 2. Crear la base de datos y su usuario
+Entramos a Mariadb:
+```
+sudo mariadb
+```
+
+Dentro de Mariadb:
+```
+CREATE DATABASE wordpress CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'wp_user'@'localhost' IDENTIFIED BY '********';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wp_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+| Orden | Qué hace |
+|-------|----------|
+| `CREATE DATABASE` | Crea la base de datos `wordpress`. `utf8mb4` permite guardar tildes, ñ y emojis. |
+| `CREATE USER` | Crea el usuario `wp_user`, que solo puede conectarse desde la propia máquina (`localhost`), con su contraseña. |
+| `GRANT ALL PRIVILEGES ON wordpress.*` | Le da todos los permisos, pero **solo** sobre la base `wordpress`. |
+| `FLUSH PRIVILEGES` | Aplica los cambios de permisos. |
+
+Compruebo que el usuario funciona entrando con él:
+```
+mariadb -u wp_user -p wordpress
+```
+
+```
+SHOW TABLES;
+EXIT;
+```
+
+Se verá en consola:
+
+```
+Enter password:
+...
+MariaDB [wordpress]> SHOW TABLES;
+Empty set (0.001 sec)
+```
