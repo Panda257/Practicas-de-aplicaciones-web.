@@ -220,6 +220,6 @@ Enabling site wordpress.
 Syntax OK
 000-default.conf  sitio-9999.conf  wordpress.conf
 ```
-![ports.conf](img/05-ports-conf.png)
-![wordpress.conf](img/06-wordpress-conf.png)
-![Sitios habilitados](img/07-sitios-habilitados.png)
+![ports.conf](ports%20conf.png)
+![wordpress.conf](wordpress%20conf.png)
+![Sitios habilitados](sitios%20habilitados.png)
