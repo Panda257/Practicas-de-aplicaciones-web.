@@ -97,3 +97,28 @@ Empty set (0.001 sec)
 ![Base de datos y usuario](bd%20usuario.png)
 
 **Explicación:** WordPress necesita una base de datos propia y un usuario que solo tenga permisos sobre ella. Al entrar con `wp_user` la conexión funciona y `SHOW TABLES` responde `Empty set`: la base existe y el usuario puede usarla pero todavía está vacía porque las tablas las creará el asistente de WordPress (la contraseña no se ve al escribirla).
+
+
+### Apartado 3. Descargar WordPress y colocarlo en su carpeta
+
+```
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+ls wordpress
+```
+
+```
+sudo mkdir -p /var/www/wordpress
+sudo cp -a /tmp/wordpress/. /var/www/wordpress/
+ls /var/www/wordpress
+```
+
+Se verá lo siguiente en la consola:
+
+```
+index.php        wp-activate.php     wp-comments-post.php  wp-content   wp-links-opml.php  wp-mail.php      wp-trackback.php
+license.txt      wp-admin            wp-config-sample.php  wp-cron.php  wp-load.php        wp-settings.php  xmlrpc.php
+readme.html      wp-blog-header.php  wp-includes           wp-login.php wp-signup.php
+```
+![Ficheros de WordPress](wordpress%20ficheros.png)
