@@ -152,3 +152,43 @@ drwxr-xr-x 30 www-data www-data 12288 ... wp-includes
 ```
 
 ![Permisos](permisos%20wordpress.png)
+
+**Explicación:** Apache se ejecuta con el usuario **`www-data`**. Para que WordPress pueda escribir (crear su `wp-config.php`, guardar imágenes, instalar plugins), ese usuario tiene que ser el propietario. `chown -R` cambia el propietario y el grupo de forma recursiva. Después, `find` busca todas las carpetas (`-type d`) y les da permisos `755`, y todos los ficheros (`-type f`) y les da `644`.
+
+| Permiso | Significado |
+|---------|-------------|
+| `755` en carpetas | El propietario lee, escribe y entra; los demás solo leen y entran. |
+| `644` en ficheros | El propietario lee y escribe; los demás solo leen. |
+
+En `ls -l` se ve `www-data www-data` como propietario y grupo, `drwxr-xr-x` (755) en las carpetas y `-rw-r--r--` (644) en los ficheros
+
+### Apartado 5. Crear el virtualhost de WordPress
+#### 5.1. Abrir el puerto 8080
+
+```
+sudo nano /etc/apache2/ports.conf
+```
+Añado `Listen 8080` debajo de las líneas existentes sin borrar ninguna:
+
+```
+Listen 80
+Listen 8080
+```
+#### 5.2. Crear el fichero del sitio
+1)
+```
+sudo nano /etc/apache2/sites-available/wordpress.conf
+```
+2)
+```
+<VirtualHost *:8080>
+    ServerName wordpress.local
+    DocumentRoot /var/www/wordpress
+    <Directory /var/www/wordpress>
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/wordpress_error.log
+    CustomLog ${APACHE_LOG_DIR}/wordpress_access.log combined
+</VirtualHost>
+```
