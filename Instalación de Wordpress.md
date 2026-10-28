@@ -192,3 +192,34 @@ sudo nano /etc/apache2/sites-available/wordpress.conf
     CustomLog ${APACHE_LOG_DIR}/wordpress_access.log combined
 </VirtualHost>
 ```
+
+| Directiva | Qué hace |
+|-----------|----------|
+| `<VirtualHost *:8080>` | Este sitio atiende las peticiones que llegan al puerto 8080. |
+| `ServerName` | Nombre del sitio. |
+| `DocumentRoot` | La carpeta donde está WordPress. |
+| `AllowOverride All` | Permite que WordPress use un fichero `.htaccess` (lo necesita para los enlaces permanentes). |
+| `Require all granted` | Permite el acceso a cualquier visitante. |
+| `ErrorLog` y `CustomLog` | Ficheros de registro propios del sitio, para saber qué falla. |
+
+#### 5.3. Activar el sitio
+
+```
+sudo a2enmod rewrite
+sudo a2ensite wordpress.conf
+sudo apachectl configtest
+sudo systemctl restart apache2
+ls /etc/apache2/sites-enabled/
+```
+
+Se verá esto en la consola:
+
+```
+Enabling module rewrite.
+Enabling site wordpress.
+Syntax OK
+000-default.conf  sitio-9999.conf  wordpress.conf
+```
+![ports.conf](img/05-ports-conf.png)
+![wordpress.conf](img/06-wordpress-conf.png)
+![Sitios habilitados](img/07-sitios-habilitados.png)
