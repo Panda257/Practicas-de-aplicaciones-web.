@@ -1,6 +1,6 @@
 # Instalación de WordPress
 ## Índice
-1.  [¿Qué es WordPress?](#1-qué-es-wordpress)
+1.  [¿Qué es WordPress?](#1.qué-es-wordpress)
 2. [Instalación paso a paso de WordPress y prueba de uso (práctica WordPress)](#2-instalación-paso-a-paso-de-wordpress-y-prueba-de-uso-práctica-wordpress)
 
 ## 1. ¿Qué es WordPress?
