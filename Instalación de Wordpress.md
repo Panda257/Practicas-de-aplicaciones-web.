@@ -93,3 +93,7 @@ Enter password:
 MariaDB [wordpress]> SHOW TABLES;
 Empty set (0.001 sec)
 ```
+
+![Base de datos y usuario](bd%20usuario.png)
+
+**Explicación:** WordPress necesita una base de datos propia y un usuario que solo tenga permisos sobre ella. Al entrar con `wp_user` la conexión funciona y `SHOW TABLES` responde `Empty set`: la base existe y el usuario puede usarla pero todavía está vacía porque las tablas las creará el asistente de WordPress (la contraseña no se ve al escribirla).
