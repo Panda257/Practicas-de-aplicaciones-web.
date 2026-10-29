@@ -279,3 +279,70 @@ Pasos del asistente:
 | **Dónde se usa** | En `wp-config.php` | En la pantalla de inicio de sesión (`/wp-login.php`) |
  
 Son usuarios totalmente distintos: uno es para que WordPress hable con la base de datos y el otro es una cuenta de la propia web.
+
+### Apartado 7. ¿Dónde ha guardado WordPress cada cosa?
+
+#### 7.1. El fichero de configuración
+
+```
+sudo grep -E "DB_NAME|DB_USER|DB_HOST" /var/www/wordpress/wp-config.php
+sudo chmod 640 /var/www/wordpress/wp-config.php
+ls -l /var/www/wordpress/wp-config.php
+```
+
+Se verá en la consola:
+
+```
+define( 'DB_NAME', 'wordpress' );
+define( 'DB_USER', 'wp_user' );
+define( 'DB_HOST', 'localhost' );
+-rw-r----- 1 www-data www-data 3363 ... /var/www/wordpress/wp-config.php
+```
+
+#### 7.2. Las tablas de la base de datos
+
+```
+mariadb -u wp_user -p wordpress
+```
+
+```
+SHOW TABLES;
+SELECT option_name, option_value FROM wp_options WHERE option_name IN ('siteurl','blogname');
+SELECT user_login FROM wp_users;
+EXIT;
+```
+
+Se verá en la consola:
+
+```
++-----------------------+
+| Tables_in_wordpress   |
++-----------------------+
+| wp_commentmeta        |
+| wp_comments           |
+| wp_links              |
+| wp_options            |
+| wp_postmeta           |
+| wp_posts              |
+| wp_term_relationships |
+| wp_term_taxonomy      |
+| wp_termmeta           |
+| wp_terms              |
+| wp_usermeta           |
+| wp_users              |
++-----------------------+
+12 rows in set
+ 
++-------------+-----------------------+
+| option_name | option_value          |
++-------------+-----------------------+
+| blogname    | Mi WordPress          |
+| siteurl     | http://localhost:8888 |
++-------------+-----------------------+
+ 
++------------+
+| user_login |
++------------+
+| tu_usuario |
++------------+
+```
