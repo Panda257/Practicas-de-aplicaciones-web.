@@ -248,3 +248,34 @@ Pasos del asistente:
 | Contraseña | `********` | La del apartado 2. |
 | Servidor de la base de datos | `localhost` | MariaDB está en la misma máquina. |
 | Prefijo de tablas | `wp_` | Texto con el que empiezan los nombres de las tablas. |
+
+4. **Iniciar la instalación**
+5. **Datos del sitio:**
+
+| Campo | Valor | Para qué sirve |
+|-------|-------|----------------|
+| Título del sitio | Mi WordPress | El nombre de la web. |
+| Nombre de usuario | `tu_usuario` | El administrador de WordPress. |
+| Contraseña | `********` | La del administrador. |
+| Correo electrónico | `alumno@example.com` | Para recuperar la contraseña y recibir avisos. |
+| Visibilidad en buscadores | Marcar ✅ Disuadir a los motores de búsqueda | Es un servidor de pruebas, no queremos que Google lo indexe. |
+
+
+6. **Éxito:** inicio sesión y llego al **Escritorio** de WordPress.
+
+![Asistente: base de datos](asistente%20bd.png)
+![Asistente: datos del sitio](asistente%20sitio.png)
+![Escritorio de WordPress](escritorio%20wordpress.png)
+
+**Explicación:** el asistente comprueba que puede conectar con MariaDB con los datos del apartado 2, crea el fichero `wp-config.php`, crea las tablas en la base de datos y registra el usuario administrador. Al terminar, WordPress ya está instalado y funcionando.
+
+**¿Qué diferencia hay entre `wp_user` y el usuario administrador de WordPress? ¿Dónde vive cada uno?**
+ 
+| | `wp_user` | Administrador de WordPress |
+|-|-----------|----------------------------|
+| **Qué es** | Usuario de **MariaDB** | Usuario de la **web** |
+| **Quién lo usa** | El programa WordPress, para leer y guardar datos | Una persona, para entrar al panel y gestionar la web |
+| **Dónde vive** | En las tablas internas de MariaDB (`mysql.user`) | En la tabla `wp_users` de la base `wordpress` |
+| **Dónde se usa** | En `wp-config.php` | En la pantalla de inicio de sesión (`/wp-login.php`) |
+ 
+Son usuarios totalmente distintos: uno es para que WordPress hable con la base de datos y el otro es una cuenta de la propia web.
