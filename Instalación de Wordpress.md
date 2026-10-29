@@ -223,3 +223,28 @@ Syntax OK
 ![ports.conf](ports%20conf.png)
 ![wordpress.conf](wordpress%20conf.png)
 ![Sitios habilitados](sitios%20habilitados.png)
+
+**Explicación:** `a2enmod rewrite` activa el módulo que permite los enlaces permanentes de WordPress (direcciones como `/hola-mundo/` en lugar de `/?p=1`). `a2ensite` habilita el sitio creando un enlace en `sites-enabled`. `configtest` revisa que la configuración no tenga errores antes de reiniciar: responde `Syntax OK`. Por último reinicio Apache para aplicar los cambios. En el listado aparecen los sitios anteriores **y** el nuevo `wordpress.conf`.
+
+### Apartado 6. Instalación desde el navegador
+
+Abre el navegador de la máquina anfitrión y entra en la dirección de tu servidor con el puerto
+8080. Para saber la IP de la máquina virtual, ejecuta ip a en ella: 
+
+```
+http://IP_DE_TU_VM:8080
+```
+
+Pasos del asistente:
+
+1. **Idioma**: Español
+2. **Bienvenida:** pulso el botón para empezar.
+3. **Datos de la base de datos:**
+
+| Campo | Valor | Para qué sirve |
+|-------|-------|----------------|
+| Nombre de la base de datos | `wordpress` | Cuál de las bases de MariaDB usar. |
+| Nombre de usuario | `wp_user` | El usuario con el que WordPress entra en MariaDB. |
+| Contraseña | `********` | La del apartado 2. |
+| Servidor de la base de datos | `localhost` | MariaDB está en la misma máquina. |
+| Prefijo de tablas | `wp_` | Texto con el que empiezan los nombres de las tablas. |
