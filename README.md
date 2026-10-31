@@ -9,4 +9,6 @@
 
 3. [Configuración Apache2](https://github.com/Panda257/Practicas-de-aplicaciones-web./blob/main/ServidorWebApache2.md)
 
-4. [Base de datos Mariadb ](https://github.com/Panda257/Practicas-de-aplicaciones-web./blob/main/Base%20de%20datos%20Mariadb.md)
+4. [Base de datos Mariadb](https://github.com/Panda257/Practicas-de-aplicaciones-web./blob/main/Base%20de%20datos%20Mariadb.md)
+
+5. [Instalación Wordpress](https://github.com/Panda257/Practicas-de-aplicaciones-web./blob/main/Instalaci%C3%B3n%20de%20Wordpress.md)
