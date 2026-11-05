@@ -27,3 +27,18 @@ Une cada etiqueta con lo que hace (por ejemplo: 1-C).
 | 5. `<small>` | D | E. Texto en subíndice (como en H2O)
 | 6. `<em>` | C | F. Texto en superíndice (como en m2)
 | 7. `<ins>` | G | G.Texto insertado (se ve subrayado)
+
+## A3. Caza los errores
+Un compañero ha entregado este código para la web de una tienda de gadgets y tiene fallos. Encuéntralos, anótalos y escribe la versión corregida. (Pista: hay al menos 5.)
+
+```
+<html>
+<head>
+<title>Mi tienda de gadgets
+</head>
+<body>
+<h1>Ofertas de otoño</h2>
+<p>Auriculares con <b>cancelación de ruido</p></b>
+</body>
+</html>
+```
