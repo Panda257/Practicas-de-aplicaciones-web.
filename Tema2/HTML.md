@@ -20,10 +20,10 @@ Une cada etiqueta con lo que hace (por ejemplo: 1-C).
 
 | Etiqueta |  | Efecto |
 | -------- |--| ------ |
-| 1
-| 2
-| 3
-| 4
-| 5 | 
-| 6 |
-| 7 |
+| 1. `<mark>` |  | A.Texto tachado (precio antiguo de una oferta)
+| 2. `<del>` |  | B.Texto remarcado, como con un fosforito
+| 3. `<sub>` |  | C. Texto enfatizado (se ve como cursiva)
+| 4. `<sup>` |  | D. Texto más pequeño que el normal
+| 5. `<small>` |  | E. Texto en subíndice (como en H2O)
+| 6. `<em>` |  | F. Texto en superíndice (como en m2)
+| 7. `<ins>` |  | G.Texto insertado (se ve subrayado)
