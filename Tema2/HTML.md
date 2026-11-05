@@ -1,4 +1,5 @@
 # Parte A. Comprobación y reflexión
+
 | Nº | Afirmación | V/F |
 |----|------------|-----|
 | 1  | "HTML es un lenguaje de programación como Python: sirve para hacer cálculos y tomar decisiones." | F. Es un lenguaje de marcado 
@@ -11,4 +12,5 @@
 | 8  | "La etiqueta `<hr>` se cierra con `</hr>.`" | V
 | 9  | "Un comentario HTML `(<!-- ... -->)` se muestra en pantalla como una nota gris." | F. Un comentario en HTML no se muestra en la pantalla del navegador, se verá únicamente al inspeccionar la página.
 | 10 | " `<span>` crea un bloque de texto que siempre empieza en una línea nueva." | F. Span es un elemento de línea, así que no empieza una nueva ni genera saltos de línea, se mantiene en la misma fila.
+
 
