@@ -42,3 +42,10 @@ Un compañero ha entregado este código para la web de una tienda de gadgets y t
 </body>
 </html>
 ```
+
+Conteo de fallos:
+1. falta cerrar el título `</title>`
+2. La etiqueta `</head>` está mal 
+3. La etiqueta H1 se cierra con H2
+4. Está mal cerrada la etiqueta `<b>`
+5. La etiqueta `<head>` está mal colocada, primero se cierra el `<title>` y después cerramos con el `<head>`
