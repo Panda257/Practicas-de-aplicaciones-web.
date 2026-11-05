@@ -16,3 +16,5 @@
 
 ## A2 Relacionar etiqueta y efecto
 Une cada etiqueta con lo que hace (por ejemplo: 1-C).
+
+| Etiqueta |  | Efecto |
