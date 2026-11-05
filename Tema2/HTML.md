@@ -109,6 +109,7 @@ El usuario verá:
 
 # RESUMEN DE LA JORNADA
 ha ganado el equipo local
+
 El rival se despide del torneo
 
 ### Próximo partido
