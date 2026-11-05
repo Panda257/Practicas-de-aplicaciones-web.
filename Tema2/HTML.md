@@ -45,10 +45,9 @@ Un compañero ha entregado este código para la web de una tienda de gadgets y t
 
 Conteo de fallos:
 1. falta cerrar el título `</title>`
-2. La etiqueta `</head>` está mal 
-3. La etiqueta H1 se cierra con H2
-4. Está mal cerrada la etiqueta `<b>`
-5. La etiqueta `<head>` está mal colocada, primero se cierra el `<title>` y después cerramos con el `<head>`
+2. La etiqueta H1 se cierra con H2
+3. Está mal cerrada la etiqueta `<b>`
+4. La etiqueta `<head>` está mal colocada, primero se cierra el `<title>` y después cerramos con el `<head>`
 
 Versión corregida:
 
@@ -62,4 +61,44 @@ Versión corregida:
     <p>Auriculares con <b>cancelación de ruido</b></p>
 </body>
 </html>
+```
+## A4. Estilos rotos
+El community manager de un streamer ha escrito estas líneas para el banner de su canal. Ninguna se ve como debería. Explica qué falla en cada una y corrígela.
+
+```
+<h1 style="color:red font-size:40px;">Directo esta noche</h1>
+<p style="text-align=center;">Estreno de temporada</p>
+<p style="background-color:yellow;">Sorteo de una tarjeta gráfica<p>
+```
+1. En la primera línea falta un punto y coma entre las propiedades CSS color y font size
+Corregido:
+`<h1 style="color:red; font-size:40px;">Directo esta noche</h1>`
+2. En la segunda línea los valores de CSS se separan con dos puntos, no con un `=`
+Corregido:
+`<p style="text-align:center;">Estreno de temporada</p>`
+3. En la tercera línea el cierre de párrafo está mal hecho
+`<p style="background-color:yellow;">Sorteo de una tarjeta gráfica</p>`
+
+## A5. Comentarios y anidación
+Un aviso de ciberseguridad tiene dos errores. Encuéntralos y corrígelos.
+
+```
+<!- Revisar el texto antes de publicar ->
+<p>Tu contraseña debe tener <strong><em>al menos 12 caracteres</strong></em>.</p>
+```
+1. La apertura de comentario está mal escrita, necesita 2 `--` y solo lleva uno
+Corregido:
+`<!-- Revisar el texto antes de publicar -->`
+2. Las etiquetas se cierran en un orden incorrecto, primero es el cierre de `</em>` y luego el de `</strong>`
+`<strong><em>al menos 12 caracteres</em></strong>`
+
+## A6. ¿Qué verá el usuario?
+Sin abrir el navegador, dibuja o describe lo que se mostrará. Después compruébalo y anota si acertaste.
+
+```
+<h1>Resumen de la jornada</h1>
+<p>Ha ganado el equipo local.<br>El rival se despide del torneo.</p>
+<hr>
+<h4>Próximo partido</h4>
+<p>Sábado a las 18:00</p>
 ```
