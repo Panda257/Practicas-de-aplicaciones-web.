@@ -49,3 +49,17 @@ Conteo de fallos:
 3. La etiqueta H1 se cierra con H2
 4. Está mal cerrada la etiqueta `<b>`
 5. La etiqueta `<head>` está mal colocada, primero se cierra el `<title>` y después cerramos con el `<head>`
+
+Versión corregida:
+
+```
+<html>
+<head>
+    <title>Mi tienda de gadgets</title>
+</head>
+<body>
+    <h1>Ofertas de otoño</h1>
+    <p>Auriculares con <b>cancelación de ruido</b></p>
+</body>
+</html>
+```
