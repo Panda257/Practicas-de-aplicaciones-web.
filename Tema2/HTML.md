@@ -91,6 +91,7 @@ Corregido:
 `<!-- Revisar el texto antes de publicar -->`
 2. Las etiquetas se cierran en un orden incorrecto, primero es el cierre de `</em>` y luego el de `</strong>`
 `<strong><em>al menos 12 caracteres</em></strong>`
+3. En la página no se vería la letra "ñ" debido a que no está colocado el `Charset=UTF-8` 
 
 ## A6. ¿Qué verá el usuario?
 Sin abrir el navegador, dibuja o describe lo que se mostrará. Después compruébalo y anota si acertaste.
@@ -102,3 +103,14 @@ Sin abrir el navegador, dibuja o describe lo que se mostrará. Después comprué
 <h4>Próximo partido</h4>
 <p>Sábado a las 18:00</p>
 ```
+
+El usuario verá:
+
+
+# RESUMEN DE LA JORNADA
+ha ganado el equipo local
+El rival se despide del torneo
+
+### Próximo partido
+Sábado a las 18:00
+
