@@ -1,4 +1,5 @@
 # Parte A. Comprobación y reflexión
+## A1. Verdadero  o falso (corregir las falsas)
 
 | Nº | Afirmación | V/F |
 |----|------------|-----|
@@ -13,4 +14,5 @@
 | 9  | "Un comentario HTML `(<!-- ... -->)` se muestra en pantalla como una nota gris." | F. Un comentario en HTML no se muestra en la pantalla del navegador, se verá únicamente al inspeccionar la página.
 | 10 | " `<span>` crea un bloque de texto que siempre empieza en una línea nueva." | F. Span es un elemento de línea, así que no empieza una nueva ni genera saltos de línea, se mantiene en la misma fila.
 
-
+## A2 Relacionar etiqueta y efecto
+Une cada etiqueta con lo que hace (por ejemplo: 1-C).
