@@ -2,7 +2,7 @@
 ## A1. Verdadero  o falso (corregir las falsas)
 
 | N.º | Afirmación | V / F | Respuesta y corrección |
-|---|---|---|---|
+|-----|------------|-------|------------------------|
 | 1 | "HTML es un lenguaje de programación como Python: sirve para hacer cálculos y tomar decisiones." | **F** | HTML es un lenguaje de **marcado**: describe la estructura y el contenido de una página (títulos, párrafos, imágenes...). No hace cálculos ni toma decisiones. |
 | 2 | "La etiqueta `<br>` no necesita etiqueta de cierre." | **V** | Es una etiqueta vacía: no envuelve contenido, así que no se cierra. |
 | 3 | "El valor de un atributo siempre se escribe entre comillas." | **V** | Es la norma que seguimos: `<a href="inicio.html">`. Son obligatorias si el valor lleva espacios. (HTML5 tolera valores simples sin comillas, pero conviene ponerlas siempre.) |
@@ -19,15 +19,15 @@
 Une cada etiqueta con lo que hace (por ejemplo: 1-C).
 
 
-| Etiqueta |  | Efecto |
-| -------- |--| ------ |
-| 1. `<mark>` | B | A.Texto tachado (precio antiguo de una oferta)
-| 2. `<del>` | A | B.Texto remarcado, como con un fosforito
-| 3. `<sub>` | E | C. Texto enfatizado (se ve como cursiva)
-| 4. `<sup>` | F | D. Texto más pequeño que el normal
-| 5. `<small>` | D | E. Texto en subíndice (como en H2O)
-| 6. `<em>` | C | F. Texto en superíndice (como en m2)
-| 7. `<ins>` | G | G.Texto insertado (se ve subrayado)
+| Etiqueta | Efecto | Respuesta |
+|----------|--------|-----------|
+| 1. `<mark>` | B. Texto remarcado, como con un fosforito | **1-B** |
+| 2. `<del>` | A. Texto tachado (precio antiguo de una oferta) | **2-A** |
+| 3. `<sub>` | E. Texto en subíndice (como en H₂O) | **3-E** |
+| 4. `<sup>` | F. Texto en superíndice (como en m²) | **4-F** |
+| 5. `<small>` | D. Texto más pequeño que el normal | **5-D** |
+| 6. `<em>` | C. Texto enfatizado (se ve como cursiva) | **6-C** |
+| 7. `<ins>` | G. Texto insertado (se ve subrayado) | **7-G** |
 
 ## A3. Caza los errores
 Un compañero ha entregado este código para la web de una tienda de gadgets y tiene fallos. Encuéntralos, anótalos y escribe la versión corregida. (Pista: hay al menos 5.)
