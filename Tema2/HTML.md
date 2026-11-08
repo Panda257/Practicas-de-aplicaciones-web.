@@ -45,21 +45,31 @@ Un compañero ha entregado este código para la web de una tienda de gadgets y t
 ```
 
 Conteo de fallos:
-1. falta cerrar el título `</title>`
-2. La etiqueta H1 se cierra con H2
-3. Está mal cerrada la etiqueta `<b>`
-4. La etiqueta `<head>` está mal colocada, primero se cierra el `<title>` y después cerramos con el `<head>`
+| N.º | Error | Por qué está mal | Corrección |
+|-----|-------|------------------|------------|
+| 1 | Falta `<!DOCTYPE html>` al principio | Sin él, el navegador no sabe qué versión de HTML usar y puede mostrar la página en modo de compatibilidad. | Añadir `<!DOCTYPE html>` en la primera línea. |
+| 2 | `<title>` no está cerrado | Falta `</title>`. El navegador toma como título **todo lo que sigue**: la pestaña muestra código y la página se ve en blanco. | `<title>Mi tienda de gadgets</title>` |
+| 3 | Falta `<meta charset="utf-8">` en `<head>` | Sin la codificación, letras como la **ñ** de "otoño" pueden verse mal. | Añadir `<meta charset="utf-8">`. |
+| 4 | `<h1>` se cierra con `</h2>` | La etiqueta de cierre debe ser la del mismo nivel que la de apertura. | `<h1>Ofertas de otoño</h1>` |
+| 5 | Etiquetas mal anidadas: `<b>...</p></b>` | `<b>` se abre dentro de `<p>`, pero se cierra fuera. Las etiquetas se cierran en **orden inverso** al de apertura (la última en abrirse es la primera en cerrarse). | `<p>Auriculares con <b>cancelación de ruido</b></p>` |
+| 6 | Falta `<meta name="author">` | Las normas del boletín piden autor en el `<head>` de todas las páginas. | Añadir `<meta name="author" content="Tu nombre">`. |
+| 7 | Falta el idioma en `<html>` | Es recomendable para buscadores y lectores de pantalla. | `<html lang="es">` |
+
+Los errores están del 1 al 5, los errores 6 y 7 son mejoras.
 
 Versión corregida:
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Mi tienda de gadgets</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Tu nombre">
+  <title>Mi tienda de gadgets</title>
 </head>
 <body>
-    <h1>Ofertas de otoño</h1>
-    <p>Auriculares con <b>cancelación de ruido</b></p>
+  <h1>Ofertas de otoño</h1>
+  <p>Auriculares con <b>cancelación de ruido</b></p>
 </body>
 </html>
 ```
@@ -71,14 +81,21 @@ El community manager de un streamer ha escrito estas líneas para el banner de s
 <p style="text-align=center;">Estreno de temporada</p>
 <p style="background-color:yellow;">Sorteo de una tarjeta gráfica<p>
 ```
-1. En la primera línea falta un punto y coma entre las propiedades CSS color y font size
-Corregido:
-`<h1 style="color:red; font-size:40px;">Directo esta noche</h1>`
-2. En la segunda línea los valores de CSS se separan con dos puntos, no con un `=`
-Corregido:
-`<p style="text-align:center;">Estreno de temporada</p>`
-3. En la tercera línea el cierre de párrafo está mal hecho
-`<p style="background-color:yellow;">Sorteo de una tarjeta gráfica</p>`
+### ¿Qué falla en cada línea?
+
+| Línea | Qué falla | Qué se ve | Corrección |
+|-------|-----------|-----------|------------|
+| 1. `<h1>` | Falta el `;` que separa `color:red` de `font-size:40px`. El navegador lee `red font-size:40px` como un solo valor, no lo entiende y **ignora las dos propiedades**. | El título sale en negro y con el tamaño normal. | `style="color:red; font-size:40px;"` |
+| 2. `<p>` centrado | Entre propiedad y valor se usa `=` en lugar de `:`. | El texto queda alineado a la izquierda. | `style="text-align:center;"` |
+| 3. `<p>` amarillo | El párrafo se "cierra" con `<p>` en lugar de `</p>`: falta la barra. | Se abre un párrafo nuevo y vacío que añade un hueco de más. | `...tarjeta gráfica</p>` |
+
+### Código corregido
+
+```
+<h1 style="color:red; font-size:40px;">Directo esta noche</h1>
+<p style="text-align:center;">Estreno de temporada</p>
+<p style="background-color:yellow;">Sorteo de una tarjeta gráfica</p>
+```
 
 ## A5. Comentarios y anidación
 Un aviso de ciberseguridad tiene dos errores. Encuéntralos y corrígelos.
@@ -87,12 +104,19 @@ Un aviso de ciberseguridad tiene dos errores. Encuéntralos y corrígelos.
 <!- Revisar el texto antes de publicar ->
 <p>Tu contraseña debe tener <strong><em>al menos 12 caracteres</strong></em>.</p>
 ```
-1. La apertura de comentario está mal escrita, necesita 2 `--` y solo lleva uno
-Corregido:
-`<!-- Revisar el texto antes de publicar -->`
-2. Las etiquetas se cierran en un orden incorrecto, primero es el cierre de `</em>` y luego el de `</strong>`
-`<strong><em>al menos 12 caracteres</em></strong>`
-3. En la página no se vería la letra "ñ" debido a que no está colocado el `Charset=UTF-8` 
+## Errores encontrados
+
+| N.º | Error | Explicación | Corrección |
+|-----|-------|-------------|------------|
+| 1 | El comentario está mal escrito | Un comentario HTML se abre con `<!--` y se cierra con `-->` (dos guiones en cada lado). Aquí solo hay uno. El navegador lo tolera, pero no es un comentario válido y el validador del W3C lo marca como error. | `<!-- Revisar el texto antes de publicar -->` |
+| 2 | Las etiquetas `<strong>` y `<em>` se cruzan | Se abre `<strong>` y luego `<em>`, pero se cierra primero `</strong>`. Hay que cerrar en orden inverso: la última en abrirse es la primera en cerrarse. | `<strong><em>...</em></strong>` |
+
+### Código corregido
+
+```
+<!-- Revisar el texto antes de publicar -->
+<p>Tu contraseña debe tener <strong><em>al menos 12 caracteres</em></strong>.</p>
+```
 
 ## A6. ¿Qué verá el usuario?
 Sin abrir el navegador, dibuja o describe lo que se mostrará. Después compruébalo y anota si acertaste.
@@ -115,4 +139,16 @@ El rival se despide del torneo
 
 ### Próximo partido
 Sábado a las 18:00
+
+--------------------------------------------------------
+
+### De arriba abajo, el navegador mostrará:
+
+1. **"Resumen de la jornada"** en letra muy grande y en negrita (es un encabezado de nivel 1).
+2. Un párrafo de **dos líneas** seguidas, sin hueco entre ellas, porque `<br>` hace un salto de línea sin abrir un párrafo nuevo:
+   - Ha ganado el equipo local.
+   - El rival se despide del torneo.
+3. Una **línea horizontal** gris que ocupa todo el ancho de la página.
+4. **"Próximo partido"** en negrita y con un tamaño mucho menor que el título (encabezado de nivel 4, casi del tamaño del texto normal).
+5. Un párrafo con **"Sábado a las 18:00"** en letra normal.
 
