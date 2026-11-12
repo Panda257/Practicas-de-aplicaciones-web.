@@ -34,4 +34,23 @@
 3. Al final, un bloque de tres líneas (autor, fecha y fuente) separadas solo con `<br>`, sin `<p>`.
 4. Una sección aparte titulada "Prueba de tamaños" con los **seis niveles de encabezado** (h1 a h6)
 
+```html
+<p>Segundo párrafo...</p>
+<hr>
+<p>Tercer párrafo...</p>
 
+Autor: TU NOMBRE<br>
+Fecha: 11 de noviembre de 2026<br>
+Fuente: Periódico digital del instituto
+```
+
+```
+<hr>
+<h2>Prueba de tamaños</h2>
+<h1>Encabezado de nivel 1</h1>
+<h2>Encabezado de nivel 2</h2>
+<h3>Encabezado de nivel 3</h3>
+<h4>Encabezado de nivel 4</h4>
+<h5>Encabezado de nivel 5</h5>
+<h6>Encabezado de nivel 6</h6>
+```
