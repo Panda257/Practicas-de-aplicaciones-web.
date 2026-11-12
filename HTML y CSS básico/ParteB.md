@@ -65,3 +65,34 @@
 
 # B3. Ficha de oferta: el Black Friday de tu tienda
 > Crea la ficha de un producto tecnológico usando **todas** estas etiquetas al menos una vez y en frases con sentido: `<b>` · `<strong>` · `<i>` · `<em>` · `<mark>` · `<small>` · `<del>` · `<ins>` · `<u>` · `<sub>` · `<sup>`.
+
+> **Pregunta (en un comentario del código):** ¿qué diferencia visual hay entre `<b>` y `<strong>`? ¿Y entre `<i>` y `<em>`? ¿Para qué crees que existen dos etiquetas distintas?
+
+### Código:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B3. Ficha de oferta</title>
+</head>
+<body>
+  <h1>Black Friday: Oppo X9  X</h1>
+  <p><strong>¡Oferta válida solo durante 24 horas!</strong></p>
+  <p>Precio: <del>999 €</del> <ins>759 €</ins></p>
+  <p>Pantalla de <b>6,59 pulgadas<sup>1</sup></b></p>
+  <p>Batería de <mark>7025 mAh</mark> con carga rápida (<i>fast charging</i>) de 80 W.</p>
+  <p><u>Envío gratis</u> a toda España.</p>
+  <p><small><sup>1</sup>Oferta válida hasta fin de existencias.</small></p>
+  <!--
+    Pregunta: ¿qué diferencia visual hay entre <b> y <strong>? ¿Y entre <i> y <em>? ¿Por qué existen dos etiquetas?
+    Respuesta: visualmente no hay diferencia. <b> y <strong> se ven en negrita, e <i> y <em> en cursiva.
+    La diferencia es el significado: <strong> marca algo importante y <em> un énfasis, mientras que
+    <b> e <i> solo cambian el aspecto. Existen las dos para separar significado y aspecto: los lectores
+    de pantalla y los buscadores entienden <strong> y <em>.
+  -->
+</body>
+</html>
+```
