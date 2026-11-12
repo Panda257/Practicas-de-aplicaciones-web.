@@ -1,6 +1,6 @@
 # B1. Tu plantilla para todo el curso
 
-Crea `plantilla.html` con la estructura básica y, en `<head>`, la codificación utf-8, un `<title>` ("Plantilla de 2.º SMR") y dos `<meta>:` descripción y autor. En el `body>` escribe un comentario que diga Aquí va el contenido. La usarás como punto de partida en el resto del boletín.
+## Crea `plantilla.html` con la estructura básica y, en `<head>`, la codificación utf-8, un `<title>` ("Plantilla de 2.º SMR") y dos `<meta>:` descripción y autor. En el `body>` escribe un comentario que diga Aquí va el contenido. La usarás como punto de partida en el resto del boletín.
 
 ```html
 <!DOCTYPE html>                <!-- Le dice al navegador que es HTML5 -->
@@ -28,3 +28,10 @@ Crea `plantilla.html` con la estructura básica y, en `<head>`, la codificación
 | `<!-- ... -->` | Comentario: nota para el programador | **No**, nunca |
 
 # B2. La noticia del día: ¿la IA te quitará el trabajo?
+## Te toca maquetar la primera noticia del periódico digital de tu instituto:
+1. Un `<h1>` con el titular y un `<h2>`
+2. Tres párrafos  `<p>`, entre el segundo y el tercero, una **línea horizontal**.
+3. Al final, un bloque de tres líneas (autor, fecha y fuente) separadas solo con `<br>`, sin `<p>`.
+4. Una sección aparte titulada "Prueba de tamaños" con los **seis niveles de encabezado** (h1 a h6)
+
+
