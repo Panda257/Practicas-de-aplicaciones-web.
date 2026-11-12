@@ -28,7 +28,7 @@
 | `<!-- ... -->` | Comentario: nota para el programador | **No**, nunca |
 
 # B2. La noticia del día: ¿la IA te quitará el trabajo?
-## Te toca maquetar la primera noticia del periódico digital de tu instituto:
+### Te toca maquetar la primera noticia del periódico digital de tu instituto:
 1. Un `<h1>` con el titular y un `<h2>`
 2. Tres párrafos  `<p>`, entre el segundo y el tercero, una **línea horizontal**.
 3. Al final, un bloque de tres líneas (autor, fecha y fuente) separadas solo con `<br>`, sin `<p>`.
