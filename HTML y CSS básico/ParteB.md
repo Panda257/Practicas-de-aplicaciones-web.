@@ -82,8 +82,9 @@
   <h1>Black Friday: Oppo X9  X</h1>
   <p><strong>¡Oferta válida solo durante 24 horas!</strong></p>
   <p>Precio: <del>999 €</del> <ins>759 €</ins></p>
-  <p>Pantalla de <b>6,59 pulgadas<sup>1</sup></b></p>
+  <p>Pantalla de <b>6,59 pulgadas<sup>1</sup></b> con una superficie de 123,30 cm<sup>2</sup>.</p>
   <p>Batería de <mark>7025 mAh</mark> con carga rápida (<i>fast charging</i>) de 80 W.</p>
+  <p>Su carcasa de aluminio reciclado genera <em>un 30 % menos</em> de CO<sub>2</sub>.</p>
   <p><u>Envío gratis</u> a toda España.</p>
   <p><small><sup>1</sup>Oferta válida hasta fin de existencias.</small></p>
   <!--
@@ -96,3 +97,19 @@
 </body>
 </html>
 ```
+### Qué hace cada etiqueta
+| Etiqueta | Se ve | Uso en la ficha |
+|----------|-------|-----------------|
+| `<b>` | Negrita | "6,59 pulgadas" (dato destacado) |
+| `<strong>` | Negrita | Aviso importante de la oferta |
+| `<i>` | Cursiva | Palabra en inglés (*fast charging*) |
+| `<em>` | Cursiva | Énfasis en "un 30 % menos" |
+| `<mark>` | Fondo amarillo | Resaltar la batería |
+| `<small>` | Letra pequeña | Frase legal |
+| `<del>` | Tachado | Precio antiguo |
+| `<ins>` | Subrayado | Precio nuevo |
+| `<u>` | Subrayado | "Envío gratis" |
+| `<sub>` | Subíndice | El 2 de CO₂ |
+| `<sup>` | Superíndice | Nota¹ y cm² 
+
+# B4. El banner del streamer
