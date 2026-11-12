@@ -44,7 +44,7 @@ Fecha: 11 de noviembre de 2026<br>
 Fuente: Periódico digital del instituto
 ```
 
-```
+```html
 <hr>
 <h2>Prueba de tamaños</h2>
 <h1>Encabezado de nivel 1</h1>
