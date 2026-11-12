@@ -152,3 +152,12 @@ Sábado a las 18:00
 4. **"Próximo partido"** en negrita y con un tamaño mucho menor que el título (encabezado de nivel 4, casi del tamaño del texto normal).
 5. Un párrafo con **"Sábado a las 18:00"** en letra normal.
 
+
+
+
+# Parte B. Ejercicios guiados
+
+## B1. Tu plantilla para todo el curso
+Crea plantilla.html con la estructura básica y, en <head>, la codificación utf-8, un <title> ("Plantilla de 2.º SMR") y dos <meta>: descripción y autor. En el <body> escribe un comentario que diga Aquí va el contenido. La usarás como punto de partida en el resto del boletín.
+
+
