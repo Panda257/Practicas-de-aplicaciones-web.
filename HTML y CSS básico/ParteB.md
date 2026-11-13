@@ -150,6 +150,7 @@
 >
 > **Parte 3 (reflexión, en un comentario).** ¿Qué significa `rgb(0, 0, 255)`? ¿Qué valor de *hue* corresponde en hsl al rojo, al verde y al azul?
 
+### Código(paleta de colores):
 
 ```html
 <!DOCTYPE html>
@@ -196,3 +197,102 @@
 | rgb | Rojo, verde y azul, de 0 a 255 | `rgb(255, 0, 0)` |
 | hex | Lo mismo que rgb, en hexadecimal (`#RRGGBB`) | `#ff0000` |
 | hsl | Tono (0-360), saturación (%) y luminosidad (%) | `hsl(0, 100%, 50%)` |
+
+# B6. El menú del ramen con tipografías de repuesto
+
+> Define `font-family` con **varias fuentes en cascada** (si falta la primera, se usa la siguiente): un título en una fuente `cursive`, una descripción en `sans-serif`, los precios en `monospace` y un párrafo con una fuente **inventada** como primera opción y otra real de repuesto.
+
+> **Pregunta:** ¿por qué debe ser fácil de leer el tipo de letra de un sitio web?
+
+### Código:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B6. Menú del ramen</title>
+</head>
+<body>
+  <h1 style="font-family:'Brush Script MT', 'Comic Sans MS', cursive;">Ramen del Barrio</h1>
+  <p style="font-family:Verdana, Arial, sans-serif;">Caldo cocinado durante 12 horas, fideos frescos hechos a mano y huevo marinado.</p>
+  <p style="font-family:'Courier New', Courier, monospace;">Ramen de miso ........ 11,50 €</p>
+  <p style="font-family:'Courier New', Courier, monospace;">Ramen de shoyu ....... 10,90 €</p>
+  <p style="font-family:FuenteQueNoExiste, Georgia, serif;">Este párrafo pide una fuente inventada; como no existe, el navegador usa Georgia.</p>
+</body>
+</html>
+```
+### Respuesta a la pregunta:
+
+Porque el objetivo de una web es comunicar y si cuesta leer, el usuario se cansa y se marcha. Además una letra clara es más accesible para personas con dificultades de visión o de lectura y se lee mejor en pantallas pequeñas.
+
+# B7. Cartel de festival con `<span>` y bordes
+
+> 1. Un `<h1>` con **borde de 5 px, línea continua y verde**.
+> 2. Un párrafo con **borde punteado azul de 3 px**.
+> 3. Un párrafo con fondo `lightpink` y **borde doble rojo de 5 px**.
+> 4. Una frase con los nombres de dos artistas destacados con `<span>`: uno en azul y otro en verde al **200 %**.
+
+> **Pregunta:** ¿qué diferencia hay entre `<span>` y `<p>` para destacar parte de un texto?
+
+### Código: 
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B7. Cartel de festival</title>
+</head>
+<body>
+  <h1 style="border:5px solid green;">Festival de Otoño 2026</h1>
+  <p style="border:3px dotted blue;">Tres días de música al aire libre en el parque central.</p>
+  <p style="background-color:lightpink; border:5px double red;">Entradas a la venta desde el lunes.</p>
+  <p>Este año actúan <span style="color:blue;">Los Satélites</span> y <span style="color:green; font-size:200%;">Luna Roja</span>.</p>
+</body>
+</html>
+```
+
+### Respuesta a la pregunta
+
+`<p>` es un elemento de **bloque** siempre empieza en una línea nueva y ocupa todo el ancho, así que no sirve para destacar una palabra dentro de una frase porque la partiría. `<span>` es un elemento **en línea**: no cambia de línea y no tiene aspecto propio, así que permite aplicar un estilo solo a un trozo del texto sin romper la frase.
+
+# B8. Etiquetas anidadas: el mensaje urgente
+
+> Una alerta del servicio de ciberseguridad debe verse **subrayada, en negrita y en cursiva a la vez**. Escribe la frase abriendo en la secuencia `<b>` `<i>` `<u>` y cerrando en el orden correcto; anota en un comentario cuál es la secuencia de cierre y por qué. Después prueba una versión **mal cerrada** y observa qué hace el navegador.
+
+### Código:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B8. Mensaje urgente</title>
+</head>
+<body>
+  <p><b><i><u>Alerta: se ha detectado un acceso no autorizado a tu cuenta.</u></i></b></p>
+  <!--
+    Secuencia de cierre: </u></i></b>, el orden inverso al de apertura (<b><i><u>).
+    Las etiquetas se anidan como cajas dentro de cajas: la última que se abre es la primera que se cierra.
+  -->
+</body>
+</html>
+```
+
+### Versión mal cerrada
+
+```html
+<p><b><i><u>Cambia tu contraseña ahora.</b></i></u></p>
+<p><b><i>Revisa tu correo</b> y tus mensajes</i> hoy mismo.</p>
+```
+
+**Qué hace el navegador** (comprobado):
+- La primera frase se ve **igual que el código bien escrito**, el navegador corrige el error por su cuenta.
+- En la segunda, el navegador deja " y tus mensajes" en **cursiva** aunque ya se había cerrado `<b>` el formato "se escapa" a texto que no tocaba.
+- El validador del W3C marca las dos líneas como error ("End tag violates nesting rules").
+
+Aunque se vea bien, eso no quiere decir que se dejará el código así, hay que dejarlo siempre en el orden correspondiente.
