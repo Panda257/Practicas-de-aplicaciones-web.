@@ -113,3 +113,86 @@
 | `<sup>` | Superíndice | Nota¹ y cm² 
 
 # B4. El banner del streamer
+> Con el atributo `style`: un `<h1>` con fondo `lightblue`; un `<h2>` **centrado**; un `<h3>` **a la derecha** con fondo `limegreen` (las dos propiedades en el mismo `style`); un párrafo en rojo y otro en azul; y un párrafo con tamaño de letra al **150 %**. Recuerda: propiedad y valor se separan con `:` y cada par termina con `;`.
+
+## Código:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B4. El banner del streamer</title>
+</head>
+<body>
+  <h1 style="background-color:lightblue;">Directo esta noche</h1>
+  <h2 style="text-align:center;">Estreno de temporada</h2>
+  <h3 style="text-align:right; background-color:limegreen;">Sorteo de una tarjeta gráfica</h3>
+  <p style="color:red;">Empezamos a las 21:00.</p>
+  <p style="color:blue;">Invitados sorpresa durante el directo.</p>
+  <p style="font-size:150%;">¡No te lo pierdas!</p>
+</body>
+</html>
+```
+
+# B5. Paleta de colores de tu marca
+> Una startup te pide cuatro titulares `<h2>` con **el mismo color escrito de cuatro formas**: nombre estándar, rgb, hex y hsl. Los cuatro deben verse exactamente igual.
+
+> **Parte 1.** Hazlo con estos colores:
+>
+> | Color | rgb | hex | hsl |
+> |---|---|---|---|
+> | Rojo | rgb(255, 0, 0) | #ff0000 | hsl(0, 100%, 50%) |
+> | Naranja | rgb(255, 165, 0) | #ffa500 | hsl(39, 100%, 50%) |
+>
+> **Parte 2.** Averigua el nombre estándar de `#3cb371` y el código hex de `rgb(238, 130, 238)` y compruébalo en pantalla.
+>
+> **Parte 3 (reflexión, en un comentario).** ¿Qué significa `rgb(0, 0, 255)`? ¿Qué valor de *hue* corresponde en hsl al rojo, al verde y al azul?
+
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B5. Paleta de colores</title>
+</head>
+<body>
+  <h1>Paleta de colores de la marca</h1>
+  <h2 style="color:red;">Rojo con nombre: red</h2>
+  <h2 style="color:rgb(255, 0, 0);">Rojo en rgb: rgb(255, 0, 0)</h2>
+  <h2 style="color:#ff0000;">Rojo en hex: #ff0000</h2>
+  <h2 style="color:hsl(0, 100%, 50%);">Rojo en hsl: hsl(0, 100%, 50%)</h2>
+  <h2 style="color:orange;">Naranja con nombre: orange</h2>
+  <h2 style="color:rgb(255, 165, 0);">Naranja en rgb: rgb(255, 165, 0)</h2>
+  <h2 style="color:#ffa500;">Naranja en hex: #ffa500</h2>
+  <h2 style="color:hsl(39, 100%, 50%);">Naranja en hsl: hsl(39, 100%, 50%)</h2>
+  <h2 style="color:mediumseagreen;">#3cb371 se llama mediumseagreen</h2>
+  <h2 style="color:#3cb371;">El mismo color en hex: #3cb371</h2>
+  <h2 style="color:rgb(238, 130, 238);">rgb(238, 130, 238)</h2>
+  <h2 style="color:#ee82ee;">En hex es #ee82ee (violet)</h2>
+  <!--
+    Reflexión: rgb(0, 0, 255) significa rojo 0, verde 0 y azul 255 (el máximo): es el azul puro.
+    En hsl, el hue (tono) es un ángulo de la rueda de color: rojo = 0, verde = 120 y azul = 240.
+  -->
+</body>
+</html>
+```
+
+### Respuestas 2 y 3
+**Parte 2** (comprobado en el navegador):
+- `#3cb371` se llama **mediumseagreen**.
+- `rgb(238, 130, 238)` en hex es **`#ee82ee`**, que corresponde al color **violet**.
+
+**Parte 3:** `rgb(0, 0, 255)` significa rojo 0, verde 0 y azul 255 (el máximo): es el **azul puro**. En hsl el *hue* (tono) es un ángulo de la rueda de color: **rojo = 0**, **verde = 120** y **azul = 240**.
+
+### RECORDATORIO (se me olvida siempre)
+ 
+| Forma | Cómo se lee | Ejemplo |
+|-------|-------------|---------|
+| Nombre | Nombre en inglés | `red` |
+| rgb | Rojo, verde y azul, de 0 a 255 | `rgb(255, 0, 0)` |
+| hex | Lo mismo que rgb, en hexadecimal (`#RRGGBB`) | `#ff0000` |
+| hsl | Tono (0-360), saturación (%) y luminosidad (%) | `hsl(0, 100%, 50%)` |
