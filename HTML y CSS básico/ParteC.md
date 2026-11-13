@@ -78,3 +78,14 @@ Haciendo antes una lista con cada sentimiento y su color (en este texto hay 27) 
 | Pasión | `red` |
 | Deseo | `firebrick` |
 | Olvido | `maroon` |
+
+### Recordatorio
+| Qué se tiene que hacer | Cómo se hace |
+|------------------------|--------------|
+| Título centrado con borde | `<h2 style="text-align:center; border:1px solid gray;">` |
+| Párrafos justificados | `<p style="text-align:justify;">` en cada párrafo |
+| Comentarios en cursiva | `<i>"..."</i>` alrededor de cada frase entre comillas |
+| Sentimiento en color y negrita | `<b style="color:crimson;">amor</b>` |
+| Última frase en línea nueva | `<br>` justo antes de la frase |
+| Última frase el doble de grande | `font-size:200%;` |
+| Fondo de toda la página | `<body style="background-color:oldlace;">` |
