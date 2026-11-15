@@ -129,3 +129,15 @@ forma más sencilla de entenderlo:
 </body>
 </html>
 ```
+
+## A6. Rutas que no funcionan
+> proyecto/
+> ├── index.html
+> ├── contacto.html
+> ├── apuntes.pdf
+> └── imagenes/
+>   ├── logo.png
+>   └── equipo.jpg
+
+Suponiendo que el código está en index.html, indica **cuáles funcionan y cuáles no**, y corrige las que fallen:
+
