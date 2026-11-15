@@ -12,7 +12,7 @@
 | 7 | "Por defecto, un enlace ya visitado se ve azul y uno por visitar, morado." | **F** | Es al revés: **por visitar, azul** y subrayado; **visitado, morado**. |
 | 8 | "Un enlace relativo escribe la URL completa, incluido el dominio." | **F** | Eso es un enlace **absoluto**. El relativo indica la ruta desde la página actual (`paginas/contacto.html`). |
 
-**Recordatorio**
+### **Recordatorio**
 > **Enlace absoluto:** lleva la dirección completa (protocolo + dominio + ruta). Funciona desde cualquier sitio.
 >
 > `https://github.com/usuario/practicas-AppsWebs/blob/main/Tema2/html-y-css.md`
