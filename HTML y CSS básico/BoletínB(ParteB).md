@@ -121,3 +121,232 @@ El `src` apunta a `setp.jpg` que no existe, en lugar de la foto el navegador mue
 | Nítido a cualquier tamaño | SVG (`.svg`) |
 | Animación | GIF (`.gif`) o APNG (`.apng`) |
 | Icono de la pestaña (favicon) | ICO (`.ico`) |
+
+# B4. Mis enlaces favoritos
+
+> Tres enlaces a webs reales, cada uno en su `<p>`: uno a https://www.w3.org/ en la **misma ventana**, uno a https://www.google.com/ en **ventana nueva** y uno a tu elección en ventana nueva. Cambia el **color** de uno con `style`. **Pregunta:** ¿de qué color se ve por defecto un enlace por visitar y uno ya visitado?
+
+### Código:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B4. Mis enlaces favoritos</title>
+</head>
+<body>
+  <h1>Mis enlaces favoritos</h1>
+  <p><a href="https://www.w3.org/">W3C, el organismo que crea los estándares web</a></p>
+  <p><a href="https://www.google.com/" target="_blank">Google, en una pestaña nueva</a></p>
+  <p><a href="https://developer.mozilla.org/es/" target="_blank" style="color:darkorange;">MDN, documentación de HTML y CSS</a></p>
+</body>
+</html>
+```
+
+### Pregunta:
+
+¿de qué color se ve por defecto un enlace por visitar y uno ya visitado?
+
+### Respuesta:
+
+Por defecto un enlace **por visitar** se ve **azul y subrayado**, y uno **ya visitado**, **morado**. Mientras se pulsa (enlace activo), se ve **rojo**.
+
+### Recordatorio
+
+| Atributo | Para qué sirve |
+|----------|----------------|
+| `href` | Destino del enlace |
+| sin `target` (o `target="_self"`) | Se abre en la misma ventana |
+| `target="_blank"` | Se abre en una pestaña nueva 
+
+#  B5. Enlaces con imagen
+
+> Un enlace cuyo **rótulo es solo una imagen** (a una web externa, en pestaña nueva) y otro cuyo rótulo es **una imagen y un texto a la vez**. En un comentario, identifica el **destino**, el **rótulo** y el **objetivo** de cada enlace.
+
+### Código:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B5. Enlaces con imagen</title>
+</head>
+<body>
+  <h1>Enlaces con imagen</h1>
+  <p><a href="https://www.w3.org/" target="_blank"><img src="imagenes/logo.png" alt="Ir a la web del W3C" style="width:150px;"></a></p>
+  <p><a href="https://developer.mozilla.org/es/"><img src="imagenes/icono.svg" alt="Icono de MDN" style="width:32px;"> Documentación de MDN</a></p>
+  <!--
+    Enlace 1: destino https://www.w3.org/, rótulo la imagen logo.png, objetivo _blank (pestaña nueva).
+    Enlace 2: destino https://developer.mozilla.org/es/, rótulo la imagen icono.svg y el texto
+    "Documentación de MDN", objetivo la misma ventana (no lleva target).
+  -->
+</body>
+</html>
+```
+
+### Partes de un enlace
+ 
+| | Enlace 1 | Enlace 2 |
+|---|--------|----------|
+| **Destino** (`href`) | https://www.w3.org/ | https://developer.mozilla.org/es/ |
+| **Rótulo** (lo que se pulsa) | La imagen `logo.png` | La imagen `icono.svg` y el texto "Documentación de MDN" |
+| **Objetivo** (`target`) | `_blank`: pestaña nueva | Sin `target`: misma ventana |
+
+
+### Recordatorio
+ 
+- El rótulo es todo lo que va entre `<a>` y `</a>`: un texto, una imagen o las dos cosas
+- Si el rótulo es solo una imagen, su `alt` debe decir adónde lleva el enlace ("Ir a la web del W3C")
+
+
+  # B6. Mini web de tres páginas
+
+  > Crea `index.html`, `sobre-mi.html` y `contacto.html`, cada una con un `<h1>` distinto y un menú con **enlaces relativos** a las otras dos. En `index.html`, una imagen de la subcarpeta `imagenes`; en `contacto.html`, un enlace **absoluto** a una web externa. **Pregunta:** ¿qué enlaces dejarían de funcionar si movieras `contacto.html` a otra carpeta
+
+
+ ### Código : `index.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Inicio</title>
+</head>
+<body>
+  <h1>Bienvenido a mi web</h1>
+  <p><a href="sobre-mi.html">Sobre mí</a> | <a href="contacto.html">Contacto</a></p>
+  <img src="imagenes/logo.png" alt="Logo de mi web" style="width:200px;">
+  <p>Esta es la página principal de mi mini web.</p>
+</body>
+</html>
+```
+
+### Código: `sobre-mi.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Sobre mí</title>
+</head>
+<body>
+  <h1>Sobre mí</h1>
+  <p><a href="index.html">Inicio</a> | <a href="contacto.html">Contacto</a></p>
+  <p>Estudio 2.º de SMR, me gusta el Jazz, aprender sobre IA en distintos foros y la fotografía.</p>
+</body>
+</html>
+```
+
+### Código: `contacto.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Contacto</title>
+</head>
+<body>
+  <h1>Contacto</h1>
+  <p><a href="index.html">Inicio</a> | <a href="sobre-mi.html">Sobre mí</a></p>
+  <p>Puedes ver mis proyectos en <a href="https://github.com/" target="_blank">GitHub</a>.</p>
+</body>
+</html>
+```
+
+### Pregunta:
+
+¿Qué enlaces dejarían de funcionar si movieras `contacto.html` a otra carpeta?
+
+Si `contacto.html` se mueve a otra carpeta (por ejemplo `paginas/`), dejan de funcionar:
+- Los enlaces de `index.html` y `sobre-mi.html` que apuntan a `contacto.html` porque ya no está en la misma carpeta (habría que poner `paginas/contacto.html`).
+- Los enlaces del menú de `contacto.html` a `index.html` y `sobre-mi.html`, porque ahora tendrían que subir una carpeta (`../index.html`).
+
+
+# B7. Tu propia chuleta
+
+> Haz una chuleta de una página con lo aprendido hasta ahora y guárdala en **PDF**. Crea `chuleta.html` con un `<h1>` y tres enlaces: al PDF local en la misma ventana, al PDF local en **pestaña nueva** y a un recurso con **URL externa**. **Pregunta:** ¿qué pasa si borras el PDF de la carpeta?
+ 
+`chuleta.pdf` va en la misma carpeta que `chuleta.html`.
+
+### Código: 
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>B7. Mi chuleta</title>
+</head>
+<body>
+  <h1>Mi chuleta de HTML</h1>
+  <p><a href="chuleta.pdf">Abrir la chuleta en esta ventana</a></p>
+  <p><a href="chuleta.pdf" target="_blank">Abrir la chuleta en una pestaña nueva</a></p>
+  <p><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">Documentación de HTML en MDN</a></p>
+</body>
+</html>
+```
+
+### Pregunta
+
+¿Qué pasa si borras el PDF de la carpeta?
+
+### Respuesta
+
+Si se borra `chuleta.pdf`, los dos enlaces locales dejan de funcionar: el navegador muestra un error de **archivo no encontrado** (en un servidor web, el error **404**). El enlace externo a MDN sigue funcionando, porque no depende de tu carpeta.
+
+### Recordatorio:
+
+- Un enlace puede llevar a cualquier archivo, no solo a páginas: PDF, imágenes, documentos...
+- El navegador abre el PDF en su propio visor
+
+
+# Parte C. Práctica 2. Las estaciones (enlaces e imágenes)
+
+> Crea una página `estaciones.html` con **4 imágenes de 300 × 300 píxeles** que sean enlaces a `otono.html`, `invierno.html`, `primavera.html` y `verano.html`. Estas páginas también las creas tú, con la estructura base, un `<h1>` con el nombre de la estación, la foto en grande (**600 × 600**) y un enlace de vuelta a `estaciones.html`.
+>
+> - `estaciones.html`: `<h1>` con el texto ESTACIONES; después, un `<h2>` con el título de cada estación y su foto a 300 × 300 (**no recortes** la imagen). Cada foto lleva un **borde de 5 píxeles de un color distinto**. Al hacer clic en la foto se abre la página de la estación en la **misma ventana**.
+> - Cada página de estación: título, foto a 600 × 600 con **borde del mismo color** que en la página principal y, debajo, un enlace con el texto "Volver a la página principal".
+> - Todas las imágenes llevan atributo `alt`.
+
+
+### Reflexión previa
+ 
+**1. ¿Qué ruta relativa usará `estaciones.html` para cargar `primavera.jpg`?**
+ 
+`imagenes/primavera.jpg`: desde la carpeta de `estaciones.html` se entra en `imagenes` y se coge el archivo.
+ 
+**2. ¿Qué pasaría si movieras las páginas de cada estación a una carpeta `paginas/`?**
+ 
+Se romperían las rutas. Esas páginas tendrían que subir una carpeta para encontrar las fotos (`../imagenes/primavera.jpg`) y para volver (`../estaciones.html`), y `estaciones.html` tendría que enlazar a `paginas/primavera.html`.
+ 
+**3. Si las fotos miden 600 × 600 y deben verse a 300 × 300, ¿las recortas o cambias el tamaño con HTML/CSS?**
+ 
+Cambio el tamaño con CSS (`width:300px; height:300px;`). Así se usa la misma foto en las dos páginas, no se pierde ninguna parte y, como es cuadrada, no se deforma.
+
+### Estructura de ficheros
+ 
+```text
+estaciones/
+├── imagenes/
+│   ├── primavera.jpg
+│   ├── verano.jpg
+│   ├── otono.jpg
+│   └── invierno.jpg
+├── estaciones.html
+├── primavera.html
+├── verano.html
+├── otono.html
+└── invierno.html
+```
+
