@@ -141,3 +141,9 @@ forma más sencilla de entenderlo:
 
 Suponiendo que el código está en index.html, indica **cuáles funcionan y cuáles no**, y corrige las que fallen:
 
+> <img src="logo.png" alt="Logo">
+> <img src="imagenes/equipo.jpg" alt="Equipo">
+> <a href="Contacto.html">Contacto</a>
+> <a href="apuntes.pdf">Apuntes</a>
+> <a href="imagenes/apuntes.pdf">Apuntes</a>
+> <img src="imagenes/equipo.png" alt="Equipo">
