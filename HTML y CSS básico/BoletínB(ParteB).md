@@ -349,4 +349,232 @@ estaciones/
 ├── otono.html
 └── invierno.html
 ```
+Fotos de licencia libre de al menos 600 px de ancho: [Unsplash](https://unsplash.com/es), [Pixabay](https://pixabay.com/es/) y/o [Wikimedia Commons](https://commons.wikimedia.org/). 
 
+### Colores de los bordes
+ 
+| Estación | Color |
+|----------|-------|
+| Primavera | `mediumseagreen` |
+| Verano | `gold` |
+| Otoño | `chocolate` |
+| Invierno | `steelblue` |
+
+### Código: `Estaciones.html`
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Estaciones</title>
+</head>
+<body>
+  <h1>ESTACIONES</h1>
+  <h2>Primavera</h2>
+  <a href="primavera.html"><img src="imagenes/primavera.jpg" alt="Foto de primavera" style="width:300px; height:300px; border:5px solid mediumseagreen;"></a>
+  <h2>Verano</h2>
+  <a href="verano.html"><img src="imagenes/verano.jpg" alt="Foto de verano" style="width:300px; height:300px; border:5px solid gold;"></a>
+  <h2>Otoño</h2>
+  <a href="otono.html"><img src="imagenes/otono.jpg" alt="Foto de otoño" style="width:300px; height:300px; border:5px solid chocolate;"></a>
+  <h2>Invierno</h2>
+  <a href="invierno.html"><img src="imagenes/invierno.jpg" alt="Foto de invierno" style="width:300px; height:300px; border:5px solid steelblue;"></a>
+</body>
+</html>
+```
+
+### Código: `primavera.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Primavera</title>
+</head>
+<body>
+  <h1>Primavera</h1>
+  <img src="imagenes/primavera.jpg" alt="Foto de primavera" style="width:600px; height:600px; border:5px solid mediumseagreen;">
+  <p><a href="estaciones.html">Volver a la página principal</a></p>
+</body>
+</html>
+```
+
+### Código: `verano.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Verano</title>
+</head>
+<body>
+  <h1>Verano</h1>
+  <img src="imagenes/verano.jpg" alt="Foto de verano" style="width:600px; height:600px; border:5px solid gold;">
+  <p><a href="estaciones.html">Volver a la página principal</a></p>
+</body>
+</html>
+```
+
+### Código: `otono.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Otoño</title>
+</head>
+<body>
+  <h1>Otoño</h1>
+  <img src="imagenes/otono.jpg" alt="Foto de otoño" style="width:600px; height:600px; border:5px solid chocolate;">
+  <p><a href="estaciones.html">Volver a la página principal</a></p>
+</body>
+</html>
+```
+
+### Código: `invierno.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Invierno</title>
+</head>
+<body>
+  <h1>Invierno</h1>
+  <img src="imagenes/invierno.jpg" alt="Foto de invierno" style="width:600px; height:600px; border:5px solid steelblue;">
+  <p><a href="estaciones.html">Volver a la página principal</a></p>
+</body>
+</html>
+```
+
+# Nivel 3 Parte A. Comprobación y reflexión
+
+## A1. Verdadero o falso
+ 
+| N.º | Afirmación | V / F | Respuesta y corrección |
+|-----|------------|-------|------------------------|
+| 1 | "Para crear un bookmark se añade el atributo `id` a una etiqueta de la página." | **V** | Por ejemplo, `<h2 id="precios">`. |
+| 2 | "`<a href="#S4">` salta al elemento con `id="S4"` de la misma página." | **V** | El `#` indica un marcador de la página. |
+| 3 | "Dos elementos de la misma página pueden tener el mismo `id`." | **F** | El `id` debe ser **único** en cada página. |
+| 4 | "`<a href="guia.html#wifi">` abre `guia.html` directamente en la sección con ese `id`." | **V** | Abre la página y salta al elemento con `id="wifi"`. |
+| 5 | "Los identificadores `Precios` y `precios` son el mismo." | **F** | Los `id` **distinguen mayúsculas y minúsculas**: son dos identificadores distintos. |
+
+## A2. ¿Qué pasa al hacer clic?
+ 
+```html
+<!-- Caso A -->
+<a href="#precios">Ver precios</a>
+<h2 id="precios">Precios</h2>
+ 
+<!-- Caso B -->
+<a href="#Precios">Ver precios</a>
+<h2 id="precios">Precios</h2>
+ 
+<!-- Caso C -->
+<a href="guia.html#instalacion">Ir a la instalación</a>
+```
+
+| Caso | Qué pasa |
+|------|----------|
+| **A** | La página **salta** al título "Precios", porque `#precios` coincide con `id="precios"`. |
+| **B** | **No salta.** `#Precios` lleva la P mayúscula y el `id` es `precios`: no coinciden. La página se queda donde está. |
+| **C** | Se abre `guia.html` en la misma ventana y salta directamente a la sección con `id="instalacion"`. Si esa sección no existe, se abre al principio de la página. |
+
+## A3. Reflexiona
+ 
+**1. ¿En qué tipo de páginas resulta más útil un índice con bookmarks?**
+ 
+En las páginas **largas** con varias secciones: guías, manuales, apuntes, preguntas frecuentes (FAQ), artículos o documentación técnica. Así el lector va directo a lo que busca sin desplazarse por toda la página
+ 
+**2. Al final de cada sección habrá un enlace de vuelta al índice. ¿A qué `id` debe apuntar y dónde tienes que ponerlo?**
+ 
+Debe apuntar al `id` que está en la **parte de arriba, donde está el índice** (por ejemplo, `<h1 id="inicio">`), con `<a href="#inicio">Volver arriba</a>`. El `id` se pone una sola vez arriba, y el enlace se repite **al final de cada sección**.
+ 
+**3. ¿Qué pasaría si dos secciones tuvieran el mismo `id`?**
+ 
+El HTML sería **incorrecto** (el validador lo marca como error) y el enlace saltaría solo a la **primera** sección con ese `id`. A la segunda no se podría llegar con el índice.
+
+# Nivel 3 · B1. Guía exprés de ciberseguridad en casa
+
+> Crea `guia.html`: un `<h1 id="inicio">`; un **índice** con cuatro enlaces (separados con `<br>`) a las secciones contraseñas, Wi-Fi, actualizaciones y copias de seguridad; cuatro secciones `<h2>` con su `id` y al menos dos párrafos cada una (la página debe ser lo bastante larga para tener que desplazarse); y al final de cada sección un enlace "Volver arriba" a `#inicio`. Crea además `indice.html` con un enlace que lleve **directamente a la sección Wi-Fi** de `guia.html`.
+
+### Código: `guia.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Guía exprés de ciberseguridad</title>
+</head>
+<body>
+  <h1 id="inicio">Guía exprés de ciberseguridad en casa</h1>
+  <h2>Índice</h2>
+  <p>
+    <a href="#contrasenas">Contraseñas</a><br>
+    <a href="#wifi">Wi-Fi</a><br>
+    <a href="#actualizaciones">Actualizaciones</a><br>
+    <a href="#copias">Copias de seguridad</a>
+  </p>
+  <h2 id="contrasenas">Contraseñas</h2>
+  <p>Una buena contraseña es larga: cuantos más caracteres tenga, más difícil es adivinarla. Una frase de varias palabras que solo tú entiendas, de al menos 12 caracteres, es más segura que una palabra corta llena de símbolos.</p>
+  <p>No repitas la misma contraseña en varias webs. Si una de ellas sufre una filtración, los atacantes probarán esa contraseña en todas tus cuentas. Un gestor de contraseñas las recuerda por ti y crea contraseñas distintas para cada sitio.</p>
+  <p>Activa la verificación en dos pasos siempre que puedas. Así, aunque alguien consiga tu contraseña, necesitará además un código de tu móvil para entrar.</p>
+  <p>Desconfía de cualquier correo o mensaje que te pida tu contraseña, aunque parezca de tu banco o de tu instituto. Ninguna empresa seria te la pedirá nunca por correo: es la técnica del phishing.</p>
+  <p><a href="#inicio">Volver arriba</a></p>
+  <h2 id="wifi">Wi-Fi</h2>
+  <p>Lo primero al instalar un router es cambiar la contraseña de administración que trae de fábrica, porque suele estar publicada en internet y cualquiera podría entrar en su configuración.</p>
+  <p>Usa el cifrado WPA2 o, mejor, WPA3, con una clave larga, y desactiva el WPS, que facilita que alguien se conecte sin conocer la clave.</p>
+  <p>Si vienen visitas, ofréceles una red de invitados. Así navegan sin tener acceso a tus ordenadores, impresoras o cámaras.</p>
+  <p>Revisa de vez en cuando la lista de dispositivos conectados en la configuración del router. Si aparece alguno que no reconoces, cambia la clave de la Wi-Fi.</p>
+  <p><a href="#inicio">Volver arriba</a></p>
+  <h2 id="actualizaciones">Actualizaciones</h2>
+  <p>Las actualizaciones no solo traen funciones nuevas: sobre todo corrigen fallos de seguridad que los atacantes ya conocen. Retrasarlas deja la puerta abierta.</p>
+  <p>Activa las actualizaciones automáticas del sistema operativo, del navegador y de las aplicaciones del móvil. Y no te olvides del router: también tiene su propio software, llamado firmware.</p>
+  <p>Descarga los programas solo de la web oficial o de la tienda de aplicaciones. Las versiones "gratis" de programas de pago suelen esconder malware.</p>
+  <p>Cuando un dispositivo deja de recibir actualizaciones, como un móvil muy antiguo, es mejor no usarlo para la banca o el correo, porque sus fallos ya no se van a corregir.</p>
+  <p><a href="#inicio">Volver arriba</a></p>
+  <h2 id="copias">Copias de seguridad</h2>
+  <p>Una copia de seguridad es la única forma de recuperar tus fotos y trabajos si el disco se estropea, si pierdes el móvil o si un ransomware cifra tus archivos.</p>
+  <p>Sigue la regla 3-2-1: tres copias de tus datos, en dos soportes distintos (por ejemplo, el ordenador y un disco externo) y una de ellas fuera de casa o en la nube.</p>
+  <p>De vez en cuando, prueba a restaurar algún archivo. Una copia que nunca se ha comprobado puede fallar justo cuando más la necesitas.</p>
+  <p>Programa las copias para que se hagan solas, por ejemplo una vez por semana. Las copias que dependen de acordarse acaban por no hacerse.</p>
+  <p><a href="#inicio">Volver arriba</a></p>
+</body>
+</html>
+```
+
+ ### Código: `indice.html`
+ 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Claudio">
+  <title>Índice de guías</title>
+</head>
+<body>
+  <h1>Guías de la clase</h1>
+  <p><a href="guia.html#wifi">Ir directamente a la sección Wi-Fi de la guía de ciberseguridad</a></p>
+</body>
+</html>
+```
+### Cómo funciona
+ 
+| Pieza | Código | Qué hace |
+|-------|--------|----------|
+| Marcador | `<h2 id="wifi">` | Pone un "nombre" a ese punto de la página |
+| Enlace en la misma página | `<a href="#wifi">` | Salta a ese marcador |
+| Volver arriba | `<a href="#inicio">` | Salta al `<h1 id="inicio">` |
+| Enlace a otra página | `<a href="guia.html#wifi">` | Abre `guia.html` directamente en la sección Wi-Fi |
