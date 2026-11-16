@@ -181,3 +181,5 @@ Respuesta**(a)** La imagen del gato aparece **a la derecha**, a la altura del p�
 Respuesta**(b)** Si `gato.jpg` no existe, en su lugar sale el **icono de imagen rota con el texto "Gato durmiendo"** (el `alt`), también a la derecha.
  
 Respuesta**(c)** Al hacer clic en el logo se abre **https://www.w3.org/ en una pestaña nueva**, porque el rótulo del enlace es la imagen y lleva `target="_blank"`.
+
+
