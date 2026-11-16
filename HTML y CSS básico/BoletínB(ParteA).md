@@ -131,6 +131,7 @@ forma más sencilla de entenderlo:
 ```
 
 ## A6. Rutas que no funcionan
+>```
 > proyecto/
 > ├── index.html
 > ├── contacto.html
@@ -138,6 +139,7 @@ forma más sencilla de entenderlo:
 > └── imagenes/
 >   ├── logo.png
 >   └── equipo.jpg
+>```
 
 Suponiendo que el código está en index.html, indica **cuáles funcionan y cuáles no**, y corrige las que fallen:
 
@@ -149,3 +151,33 @@ Suponiendo que el código está en index.html, indica **cuáles funcionan y cuá
 > <a href="imagenes/apuntes.pdf">Apuntes</a>
 > <img src="imagenes/equipo.png" alt="Equipo">
 >```
+
+ Código | ¿Funciona? | Motivo | Corrección |
+|-------|------------|--------|------------|
+| `<img src="logo.png" alt="Logo">` | ❌ | `logo.png` está dentro de `imagenes/`. | `src="imagenes/logo.png"` |
+| `<img src="imagenes/equipo.jpg" alt="Equipo">` | ✅ | | |
+| `<a href="Contacto.html">Contacto</a>` | ❌ | El archivo es `contacto.html` en minúsculas, y en muchos servidores no es lo mismo. | `href="contacto.html"` |
+| `<a href="apuntes.pdf">Apuntes</a>` | ✅ | | |
+| `<a href="imagenes/apuntes.pdf">Apuntes</a>` | ❌ | `apuntes.pdf` no está en `imagenes/`, sino junto a `index.html`. | `href="apuntes.pdf"` |
+| `<img src="imagenes/equipo.png" alt="Equipo">` | ❌ | La foto es `.jpg`, no `.png`. | `src="imagenes/equipo.jpg"` |
+
+## A7. ¿Qué verá el usuario?
+
+```html
+<h2>Mi mascota</h2>
+<img src="gato.jpg" alt="Gato durmiendo" style="float: right;">
+<p>Se llama Miau y duerme catorce horas al día. Cuando está despierto, intenta apagar el router.</p>
+<a href="https://www.w3.org/" target="_blank"><img src="logo.png" alt="W3C"></a>
+```
+
+(a) ¿Dónde aparece la imagen del gato respecto al texto?
+
+(b) Si gato.jpg no existe, ¿qué se mostrará? 
+
+(c) ¿Qué ocurre al hacer clic en el logo?
+
+Respuesta**(a)** La imagen del gato aparece **a la derecha**, a la altura del párrafo, y el texto queda a su izquierda rodeándola.
+ 
+Respuesta**(b)** Si `gato.jpg` no existe, en su lugar sale el **icono de imagen rota con el texto "Gato durmiendo"** (el `alt`), también a la derecha.
+ 
+Respuesta**(c)** Al hacer clic en el logo se abre **https://www.w3.org/ en una pestaña nueva**, porque el rótulo del enlace es la imagen y lleva `target="_blank"`.
