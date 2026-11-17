@@ -51,7 +51,7 @@ PHP 8.5.4 (cli) (built: Oct 19 2026 14:35:18) (NTS)
 Listen 80
 ```
 
-![Punto de partida](capturas%20de%20pantalla%20Tema1/punto%20partida.png)
+![Punto de partida](../capturas%20de%20pantalla%20Tema1/punto%20partida.png)
 
 ### Apartado 2. Crear la base de datos y su usuario
 Entramos a Mariadb:
@@ -94,7 +94,7 @@ MariaDB [wordpress]> SHOW TABLES;
 Empty set (0.001 sec)
 ```
 
-![Base de datos y usuario](capturas%20de%20pantalla%20Tema1/bd%20usuario.png)
+![Base de datos y usuario](../capturas%20de%20pantalla%20Tema1/bd%20usuario.png)
 
 **Explicación:** WordPress necesita una base de datos propia y un usuario que solo tenga permisos sobre ella. Al entrar con `wp_user` la conexión funciona y `SHOW TABLES` responde `Empty set`: la base existe y el usuario puede usarla pero todavía está vacía porque las tablas las creará el asistente de WordPress (la contraseña no se ve al escribirla).
 
@@ -121,7 +121,7 @@ index.php        wp-activate.php     wp-comments-post.php  wp-content   wp-links
 license.txt      wp-admin            wp-config-sample.php  wp-cron.php  wp-load.php        wp-settings.php  xmlrpc.php
 readme.html      wp-blog-header.php  wp-includes           wp-login.php wp-signup.php
 ```
-![Ficheros de WordPress](capturas%20de%20pantalla%20Tema1/wordpress%20ficheros.png)
+![Ficheros de WordPress](../capturas%20de%20pantalla%20Tema1/wordpress%20ficheros.png)
 
 **Explicación:** trabajo en `/tmp`, una carpeta temporal. `wget` descarga la última versión de WordPress desde la web oficial y `tar -xzf` la descomprime (`x` extraer, `z` formato gzip, `f` fichero), después creo la carpeta definitiva con `mkdir -p` y copio el contenido con `cp -a` que conserva fechas y permisos. El `.` final de `/tmp/wordpress/.` hace que se copie el **contenido** de la carpeta incluidos los ficheros ocultos y no la carpeta en sí.
 
@@ -151,7 +151,7 @@ drwxr-xr-x 30 www-data www-data 12288 ... wp-includes
 ...
 ```
 
-![Permisos](capturas%20de%20pantalla%20Tema1/permisos%20wordpress.png)
+![Permisos](../capturas%20de%20pantalla%20Tema1/permisos%20wordpress.png)
 
 **Explicación:** Apache se ejecuta con el usuario **`www-data`**. Para que WordPress pueda escribir (crear su `wp-config.php`, guardar imágenes, instalar plugins), ese usuario tiene que ser el propietario. `chown -R` cambia el propietario y el grupo de forma recursiva. Después, `find` busca todas las carpetas (`-type d`) y les da permisos `755`, y todos los ficheros (`-type f`) y les da `644`.
 
@@ -220,9 +220,9 @@ Enabling site wordpress.
 Syntax OK
 000-default.conf  sitio-9999.conf  wordpress.conf
 ```
-![ports.conf](capturas%20de%20pantalla%20Tema1/ports%20conf.png)
-![wordpress.conf](capturas%20de%20pantalla%20Tema1/wordpress%20conf.png)
-![Sitios habilitados](capturas%20de%20pantalla%20Tema1/sitios%20habilitados.png)
+![ports.conf](../capturas%20de%20pantalla%20Tema1/ports%20conf.png)
+![wordpress.conf](../capturas%20de%20pantalla%20Tema1/wordpress%20conf.png)
+![Sitios habilitados](../capturas%20de%20pantalla%20Tema1/sitios%20habilitados.png)
 
 **Explicación:** `a2enmod rewrite` activa el módulo que permite los enlaces permanentes de WordPress (direcciones como `/hola-mundo/` en lugar de `/?p=1`). `a2ensite` habilita el sitio creando un enlace en `sites-enabled`. `configtest` revisa que la configuración no tenga errores antes de reiniciar: responde `Syntax OK`. Por último reinicio Apache para aplicar los cambios. En el listado aparecen los sitios anteriores **y** el nuevo `wordpress.conf`.
 
@@ -263,9 +263,9 @@ Pasos del asistente:
 
 6. **Éxito:** inicio sesión y llego al **Escritorio** de WordPress.
 
-![Asistente: base de datos](capturas%20de%20pantalla%20Tema1/asistente%20bd.png)
-![Asistente: datos del sitio](capturas%20de%20pantalla%20Tema1/asistente%20sitio.png)
-![Escritorio de WordPress](capturas%20de%20pantalla%20Tema1/escritorio%20wordpress.png)
+![Asistente: base de datos](../capturas%20de%20pantalla%20Tema1/asistente%20bd.png)
+![Asistente: datos del sitio](../capturas%20de%20pantalla%20Tema1/asistente%20sitio.png)
+![Escritorio de WordPress](../capturas%20de%20pantalla%20Tema1/escritorio%20wordpress.png)
 
 **Explicación:** el asistente comprueba que puede conectar con MariaDB con los datos del apartado 2, crea el fichero `wp-config.php`, crea las tablas en la base de datos y registra el usuario administrador. Al terminar, WordPress ya está instalado y funcionando.
 

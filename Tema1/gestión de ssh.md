@@ -16,11 +16,11 @@ si no tienes OpenSSH instalado puedes usar el comando: **sudo apt install openss
 3. Editaremos el fichero con: **sudo nano /etc/netplan/50-cloud-init.yaml** o con **00-cloud-init.yaml** ( depende de cuál se tenga, lo sabremos usando el comando ls /etc/neptplan/)
 5. Nos encontraremos con algo como esto:
 
-![NetPlan](capturas%20de%20pantalla%20Tema1/Net%20Plan.png) 
+![NetPlan](../capturas%20de%20pantalla%20Tema1/Net%20Plan.png) 
 
 6. Lo tendremos que dejar algo así (por ejemplo):
 
-![NetPlanCompleto](capturas%20de%20pantalla%20Tema1/Net%20PlanCompleto.png) 
+![NetPlanCompleto](../capturas%20de%20pantalla%20Tema1/Net%20PlanCompleto.png) 
 
 7. Aplicaremos los cambios usando **sudo netplan apply** (en caso de haber hecho algo mal, este comando nos lo dirá ya que los cambios no se aplicarán y nos enseñará la línea con el error)
 8. verificamos con **ip a**

@@ -61,7 +61,7 @@ Listen 9999
 **sudo nano /etc/apache2/sites-available/smr.conf** (el fichero se crea vacío)
 Se coloca el siguiente contenido (extender en modo edición para verse mejor):
 
-![Fichero Virtualhost](capturas%20de%20pantalla%20Tema1/Fichero%20Virtualhost.png)
+![Fichero Virtualhost](../capturas%20de%20pantalla%20Tema1/Fichero%20Virtualhost.png)
 
 <VirtualHost *:80>
 
@@ -111,7 +111,7 @@ sudo nano /etc/apache2/sites-available/smr.conf
 
 2. Dejamos el fichero así:
 
-![Fichero Servername](capturas%20de%20pantalla%20Tema1/Fichero%20Servername.png)
+![Fichero Servername](../capturas%20de%20pantalla%20Tema1/Fichero%20Servername.png)
 
 ServerName: nombre de la web
 
@@ -168,7 +168,7 @@ network:
 3. Aplicamos los cambios con sudo netplan apply
 
 Luego iremos al fichero del virtualhost (sudo nano /etc/apache2/sites-available/smr.conf)
-![IP Virtualhost](capturas%20de%20pantalla%20Tema1/IP%20Virtualhost.png)
+![IP Virtualhost](../capturas%20de%20pantalla%20Tema1/IP%20Virtualhost.png)
 
 # Directorio protegido con contraseña(Auth-Basic):
 
@@ -181,7 +181,7 @@ sudo htpasswd -c /etc/apache2/.htpasswd alumno  : Las contraseñas se guardan ci
 2. Añadir la protección al Virtualhost:
 Editaremos de nuevo **smr.conf** y añadiremos el bloque <Directory> dentro del virtualhost del puerto 9999, el fichero completo queda así:
 
-![Directorio protegido](capturas%20de%20pantalla%20Tema1/Directorio%20protegido.png)
+![Directorio protegido](../capturas%20de%20pantalla%20Tema1/Directorio%20protegido.png)
 
 3. Aplicamos cambios
 
