@@ -17,7 +17,7 @@
 ## Error máquina virtual:
 **Es posible que aparezca este error, en caso de que lo tengas hay que desinstalar el VBox y hay que volverlo a instalar o solamente actualizarlo.**
 
-![VirtualBox Error](Error%20VirtualBox.png) 
+![VirtualBox Error](capturas%20de%20pantalla%20Tema1/Error%20VirtualBox.png) 
 
 ## Instalación con máquina encendida
 5. Luego de iniciar la máquina elegimos el idioma del sistema y del teclado.

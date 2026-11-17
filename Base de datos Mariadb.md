@@ -79,7 +79,7 @@ En la consola se mostrará:
 active
 ```
 
-![Apache activo](Apache%20activo.png)
+![Apache activo](capturas%20de%20pantalla%20Tema1/Apache%20activo.png)
 
 
 ### Apartado 2. Instalación de MariaDB
@@ -92,7 +92,7 @@ En la consola se verá algo así:
 ```
 mariadb  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64)
 ```
-![Versión de MariaDB](Mariadb%20version.png)
+![Versión de MariaDB](capturas%20de%20pantalla%20Tema1/Mariadb%20version.png)
 
 
 Explicación: `apt install mariadb-server` instala el servidor de bases de datos. La opción `-y` responde "sí" automáticamente a la confirmación. Con `mariadb --version` compruebo que se ha instalado la versión **10.11**, que es una versión LTS (soporte largo) compatible con WordPress.
@@ -129,8 +129,8 @@ Para salir de MariaDB:
 exit
 ```
 
-![Estado del servicio Mariadb](Mariadb%20status.png)
-![Entrada en MariaDB](Mariadb%20entrada.png)
+![Estado del servicio Mariadb](capturas%20de%20pantalla%20Tema1/Mariadb%20status.png)
+![Entrada en MariaDB](capturas%20de%20pantalla%20Tema1/Mariadb%20entrada.png)
 
 
 Explicación: `sudo mariadb` abre el cliente de MariaDB como administrador, el prompt cambia a `MariaDB [(none)]>`, lo que indica que estoy dentro del gestor y que este responde correctamente. `(none)` significa que todavía no he seleccionado ninguna base de datos. 
@@ -184,8 +184,8 @@ Se verá esto en la terminal:
 active
 ```
 
-![Error con MariaDB parado](Mariadb%20error.png)
-![Recuperación del servicio](Mariadb%20recuperado.png)
+![Error con MariaDB parado](capturas%20de%20pantalla%20Tema1/Mariadb%20error.png)
+![Recuperación del servicio](capturas%20de%20pantalla%20Tema1/Mariadb%20recuperado.png)
 
 ### Apartado 6. Instalación de PHP
 #### 6.1. Instalación de PHP y extensiones
@@ -254,9 +254,9 @@ Abrimos en el navegador: `http://IP_DE_TU_SERVIDOR/info.php`
 
 Explicación: creo un fichero `info.php` con la función `phpinfo()` que genera una página con toda la información de PHP. `tee` con `sudo` permite escribir en `/var/www/html` que pertenece a root. Al abrirlo aparece la página morada con la versión de PHP lo que demuestra que Apache ejecuta PHP correctamente (si no, se vería el código o se descargaría el fichero)
 
-![php -v](php%20version.png)
-![Módulos de PHP](php%20modulo.png)
-![Página info.php](info%20php.png)
+![php -v](capturas%20de%20pantalla%20Tema1/php%20version.png)
+![Módulos de PHP](capturas%20de%20pantalla%20Tema1/php%20modulo.png)
+![Página info.php](capturas%20de%20pantalla%20Tema1/info%20php.png)
 
 #### 6.5. Borrar el fichero de prueba (obligatorio)
 
