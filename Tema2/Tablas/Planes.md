@@ -1,4 +1,4 @@
-# Tabla de planes de alojamiento web
+# Tabla de planes de alojamiento web (24/11 incompleto)
 ```html
 <!DOCTYPE html>
 <html lang="es">
