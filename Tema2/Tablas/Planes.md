@@ -16,15 +16,37 @@
             background-color: rgb(14, 34, 56);
             color: white
         }
+        th, td{
+            text-align: center;
+            border: 1px solid #9e9999;
+        }
         tfoot{
             background-color: rgb(171, 247, 95);
         }
+        tbody tr:nth-child(even){
+            background-color: #e6f0ee;
+        }
+        tbody tr:nth-child(odd){
+            background-color: #f3f7f6;
+        }
+        caption{
+            font-weight: bold;
+        }  
+        tbody td:first-of-type{
+            text-align: left;
+        }
+        table{
+            width: 80%;
+        }
+        
     </style>
 </head>
 <body>
     <table>
     <caption>Planes de alojamiento web · NubeTorrent</caption>
+    
     <thead>
+        
         <tr>
             <th colspan="2" rowspan="2">Característica</th>
             <th colspan="3">Plan</th>
@@ -70,6 +92,7 @@
             <td>9€</td>
             <td>19€</td>
         </tr>
+        
     </tfoot>
 </table>
 </body>
